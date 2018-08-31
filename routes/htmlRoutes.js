@@ -3,21 +3,23 @@ var db = require("../models");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
+    db.FoodTruck.findAll({}).then(function(dbfoodTrucks) {
       res.render("index", {
         msg: "Welcome!",
-        examples: dbExamples
+        foodTrucks: dbfoodTrucks
       });
     });
   });
 
-  // Load example page and pass in an example by id
-  app.get("/example/:id", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.render("example", {
-        example: dbExample
+  // Load foodTruck page and pass in an foodTruck by id
+  app.get("/foodTruck/:id", function(req, res) {
+    db.foodTruck
+      .findOne({ where: { id: req.params.id } })
+      .then(function(dbfoodTruck) {
+        res.render("foodTruck", {
+          foodTruck: dbfoodTruck
+        });
       });
-    });
   });
 
   // Render 404 page for any unmatched routes
