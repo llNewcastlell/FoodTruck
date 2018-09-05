@@ -1,17 +1,14 @@
-module.exports = function(sequelize, DataTypes) {
+module.exports = function(sequelize, Sequelize) {
   var FoodTruck = sequelize.define("FoodTruck", {
-    name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [1]
-      }
-    },
-    location: {
-      type: DataTypes.TEXT,
-      allowNull: false,
-      len: [1]
-    }
+    name: Sequelize.STRING,
+    imgLink: Sequelize.STRING,
+    foodType: Sequelize.STRING,
+    description: Sequelize.STRING,
+    menuLink: Sequelize.STRING,
+    price: Sequelize.STRING,
+    phone: Sequelize.STRING,
+    latitude: Sequelize.STRING,
+    longitude: Sequelize.STRING
   });
 
   FoodTruck.associate = function(models) {
