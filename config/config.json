@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": "",
-    "database": "foodTruckDB",
+    "password": "v03041980m!!!",
+    "database": "FOODTRUCKSAMPLE",
     "host": "localhost",
     "dialect": "mysql"
   },
