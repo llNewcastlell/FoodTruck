@@ -37,11 +37,11 @@ module.exports = function(app) {
   });
 
   // Review route for saving a new Review
-//   app.Review("/api/reviews", function(req, res) {
-//     db.Review.create(req.body).then(function(dbReview) {
-//       res.json(dbReview);
-//     });
-//   });
+  //   app.Review("/api/reviews", function(req, res) {
+  //     db.Review.create(req.body).then(function(dbReview) {
+  //       res.json(dbReview);
+  //     });
+  //   });
 
   // DELETE route for deleting reviews
   app.delete("/api/reviews/:id", function(req, res) {

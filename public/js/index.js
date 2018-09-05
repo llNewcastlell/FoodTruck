@@ -1,47 +1,47 @@
 // Get references to page elements
-var $exampleText = $("#example-text");
-var $exampleDescription = $("#example-description");
+var $foodTruckText = $("#foodTruck-text");
+var $foodTruckDescription = $("#foodTruck-description");
 var $submitBtn = $("#submit");
-var $exampleList = $("#example-list");
+var $foodTruckList = $("#foodTruck-list");
 
 // The API object contains methods for each kind of request we'll make
 var API = {
-  saveExample: function(example) {
+  savefoodTruck: function(foodTruck) {
     return $.ajax({
       headers: {
         "Content-Type": "application/json"
       },
       type: "POST",
-      url: "api/examples",
-      data: JSON.stringify(example)
+      url: "api/foodTruck",
+      data: JSON.stringify(foodTruck)
     });
   },
-  getExamples: function() {
+  getfoodTrucks: function() {
     return $.ajax({
-      url: "api/examples",
+      url: "api/foodTruck",
       type: "GET"
     });
   },
-  deleteExample: function(id) {
+  deletefoodTruck: function(id) {
     return $.ajax({
-      url: "api/examples/" + id,
+      url: "api/foodTruck/" + id,
       type: "DELETE"
     });
   }
 };
 
-// refreshExamples gets new examples from the db and repopulates the list
-var refreshExamples = function() {
-  API.getExamples().then(function(data) {
-    var $examples = data.map(function(example) {
+// refreshfoodTrucks gets new foodTrucks from the db and repopulates the list
+var refreshfoodTrucks = function() {
+  API.getfoodTrucks().then(function(data) {
+    var $foodTrucks = data.map(function(foodTruck) {
       var $a = $("<a>")
-        .text(example.text)
-        .attr("href", "/example/" + example.id);
+        .text(foodTruck.text)
+        .attr("href", "/foodTruck/" + foodTruck.id);
 
       var $li = $("<li>")
         .attr({
           class: "list-group-item",
-          "data-id": example.id
+          "data-id": foodTruck.id
         })
         .append($a);
 
@@ -54,46 +54,46 @@ var refreshExamples = function() {
       return $li;
     });
 
-    $exampleList.empty();
-    $exampleList.append($examples);
+    $foodTruckList.empty();
+    $foodTruckList.append($foodTrucks);
   });
 };
 
-// handleFormSubmit is called whenever we submit a new example
-// Save the new example to the db and refresh the list
+// handleFormSubmit is called whenever we submit a new foodTruck
+// Save the new foodTruck to the db and refresh the list
 var handleFormSubmit = function(event) {
   event.preventDefault();
 
-  var example = {
-    text: $exampleText.val().trim(),
-    description: $exampleDescription.val().trim()
+  var foodTruck = {
+    text: $foodTruckText.val().trim(),
+    description: $foodTruckDescription.val().trim()
   };
 
-  if (!(example.text && example.description)) {
-    alert("You must enter an example text and description!");
+  if (!(foodTruck.text && foodTruck.description)) {
+    alert("You must enter an foodTruck text and description!");
     return;
   }
 
-  API.saveExample(example).then(function() {
-    refreshExamples();
+  API.savefoodTruck(foodTruck).then(function() {
+    refreshfoodTrucks();
   });
 
-  $exampleText.val("");
-  $exampleDescription.val("");
+  $foodTruckText.val("");
+  $foodTruckDescription.val("");
 };
 
-// handleDeleteBtnClick is called when an example's delete button is clicked
-// Remove the example from the db and refresh the list
+// handleDeleteBtnClick is called when an foodTruck's delete button is clicked
+// Remove the foodTruck from the db and refresh the list
 var handleDeleteBtnClick = function() {
   var idToDelete = $(this)
     .parent()
     .attr("data-id");
 
-  API.deleteExample(idToDelete).then(function() {
-    refreshExamples();
+  API.deletefoodTruck(idToDelete).then(function() {
+    refreshfoodTrucks();
   });
 };
 
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
-$exampleList.on("click", ".delete", handleDeleteBtnClick);
+$foodTruckList.on("click", ".delete", handleDeleteBtnClick);
