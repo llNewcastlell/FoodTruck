@@ -33,6 +33,13 @@ require("./routes/foodTruck-apiRoutes")(app);
 require("./routes/review-apiRoutes")(app);
 require("./routes/user-apiRoutes")(app);
 
+// Added by Tessa -- Not sure if we should do this the way shown above or the way I have it below...
+// Import routes and give the server access to them.
+var routes = require("./controllers/forageController.js");
+
+app.use(routes);
+// End of added portion
+
 var syncOptions = {
   force: false
 };

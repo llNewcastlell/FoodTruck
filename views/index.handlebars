@@ -1,4 +1,47 @@
-<div id="home">
+{{!-- This is the "home" page where the 3 top-rated food trucks will be displayed --}}
+
+
+{{!-- Header --}}
+<div id="header" class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 id="headerText" class="display-4">Food Truck Forager</h1>
+  </div>
+</div>
+{{!-- Main section of the home page --}}
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3">
+      {{!-- Side Navbar --}}
+      <nav class="nav flex-column">
+        <a class="nav-link active" href="#">Home</a>
+        <a class="nav-link" href="#">Search</a>
+        <a class="nav-link" href="#">Your Account</a>
+        <a class="nav-link disabled" href="#">Log Out</a>
+      </nav>
+    </div>
+    {{!-- Box to hold images and info of top 3 food trucks--}}
+    <div class="col-sm-9" id="topTrucksBackground">
+      <div id="topTrucks">
+
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+{{!-- original example --}}
+{{!-- <div id="home">
   <div class="container">
     <div class="row">
       <div class="col-8 offset-2">
@@ -27,7 +70,7 @@
       </div>
     </div>
   </div>
-</div>
+</div> --}}
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>
