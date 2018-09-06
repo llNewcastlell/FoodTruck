@@ -1,6 +1,6 @@
-module.exports = function(sequelize, DataTypes) {
+module.exports = function(sequelize, Sequelize) {
   var User = sequelize.define("User", {
-    name: DataTypes.STRING
+    name: Sequelize.STRING
   });
 
   User.associate = function(models) {
@@ -11,7 +11,7 @@ module.exports = function(sequelize, DataTypes) {
   return User;
 };
 
-// module.exports = function(sequelize, DataTypes) {
+// module.exports = function(sequelize, Sequelize) {
 // var User = sequelize.define('user', {
 //   firstName: {
 //     type: Sequelize.STRING
