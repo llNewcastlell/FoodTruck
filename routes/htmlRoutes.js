@@ -3,7 +3,7 @@ var db = require("../models");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    db.FoodTruck.findAll({}).then(function(dbfoodTrucks) {
+    db.FOODTRUCKSAMPLE.findAll({}).then(function(dbfoodTrucks) {
       res.render("index", {
         msg: "Welcome!",
         foodTrucks: dbfoodTrucks
@@ -13,13 +13,15 @@ module.exports = function(app) {
 
   // Load foodTruck page and pass in an foodTruck by id
   app.get("/foodTruck/:id", function(req, res) {
-    db.foodTruck
-      .findOne({ where: { id: req.params.id } })
-      .then(function(dbfoodTruck) {
-        res.render("foodTruck", {
-          foodTruck: dbfoodTruck
-        });
+    db.FOODTRUCKSAMPLE.findOne({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(FOODTRUCKSAMPLE) {
+      res.render("foodTruck", {
+        foodTruck: FOODTRUCKSAMPLE
       });
+    });
   });
 
   // Render 404 page for any unmatched routes
