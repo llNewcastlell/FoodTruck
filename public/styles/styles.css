@@ -2,6 +2,10 @@
   line-height: 2.5;
 }
 
+/* Map styling */
+#mapid {
+  height: 180px;
+}
 /* font-family: 'Monoton', cursive;
 font-family: 'Cabin Sketch', cursive;
 font-family: 'Fredericka the Great', cursive;

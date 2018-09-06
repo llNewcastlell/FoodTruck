@@ -3,12 +3,12 @@ var db = require("../models");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    db.FOODTRUCKSAMPLE.findAll({}).then(function(dbfoodTrucks) {
-      res.render("index", {
-        msg: "Welcome!",
-        foodTrucks: dbfoodTrucks
-      });
-    });
+    // db.FOODTRUCKSAMPLE.findAll({}).then(function(dbfoodTrucks) {
+    //   res.render("index", {
+    //     msg: "Welcome!",
+    //     foodTrucks: dbfoodTrucks
+    //   });
+    // });
   });
 
   // Load foodTruck page and pass in an foodTruck by id
