@@ -1,47 +1,58 @@
 {{!-- Header --}}
+
 <div id="header" class="jumbotron jumbotron-fluid">
   <div class="container">
+    
     <h1 id="headerText" class="display-4">Food Truck Forager</h1>
+
   </div>
 </div>
- 
-{{!-- Main part of Page --}}
+
 <div class="container">
   <div class="row">
-    <div class="col-sm-3">
+    <div class="col-sm-2" id="nav">
       {{!-- Side Navbar --}}
+
       <nav class="nav flex-column">
-        <a class="nav-link active" href="#">Home</a>
-        <a class="nav-link" href="#">Search</a>
-        <a class="nav-link" href="#">Your Account</a>
-        <a class="nav-link disabled" href="#">Log Out</a>
+        <br>
+        <br>
+        <br>
+
+        <a class="nav-link a disabled" href="#">Home</a>
+        <br>
+        <a class="nav-link a disabled" href="#">Search</a>
+        <br>
+        <a class="nav-link a disabled" href="#">Your Account</a>
+        <br>
+        <a class="nav-link a disabled" href="#">Log Out</a>
+
       </nav>
     </div>
     {{!-- Box to hold image of food truck and search-by-food dropdown menu (and add style)--}}
-    <div class="col-sm-9" id="searchDivBackground">
-      <div id="searchDiv">
-        {{!-- Dropdown menu for user to select type of cuisine --}}
-        <div class="dropdown">
-          <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            Dropdown button
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <div class="list-group">
-              <button type="button" class="list-group-item list-group-item-action">Dapibus ac
-                facilisis
-                in</button>
-              <button type="button" class="list-group-item list-group-item-action">Morbi leo risus</button>
-              <button type="button" class="list-group-item list-group-item-action">Porta ac
-                consectetur
-                ac</button>
-              <button type="button" class="list-group-item list-group-item-action" disabled>Vestibulum
-                at
-                eros</button>
-            </div>
+    <div class="col-sm-10" id="searchDivBackground">
+      <!-- <div id="searchDiv"> -->
+      {{!-- Dropdown menu for user to select type of cuisine --}}
+      <div class="dropdown">
+        <button class="btn btn btn-lg dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" 
+          aria-haspopup="true" aria-expanded="false">
+          Dropdown button
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <div class="list-group">
+            <button type="button" class="list-group-item list-group-item-action">Dapibus ac
+              facilisis
+              in</button>
+            <button type="button" class="list-group-item list-group-item-action">Morbi leo risus</button>
+            <button type="button" class="list-group-item list-group-item-action">Porta ac
+              consectetur
+              ac</button>
+            <button type="button" class="list-group-item list-group-item-action" disabled>Vestibulum
+              at
+              eros</button>
           </div>
         </div>
       </div>
+      <!-- </div> -->
     </div>
   </div>
 </div>
@@ -52,16 +63,3 @@
 <div id="results">
 
 </div>
-
-
-
-
-{{!-- Original Example --}}
-{{!-- <div class="container">
-  <div class="jumbotron mt-4">
-    <h1 class="display-4 text-center">404 Not Found
-      <span role="img" aria-label="Face with rolling eyes">🙄</span>
-    </h1>
-    <a href="/">← Back To Home</a>
-  </div>
-</div> --}}

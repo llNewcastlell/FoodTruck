@@ -3,12 +3,23 @@ var db = require("../models");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    db.FoodTruck.findAll({}).then(function(dbfoodTrucks) {
-      res.render("index", {
-        msg: "Welcome!",
-        foodTrucks: dbfoodTrucks
-      });
-    });
+    // db.FoodTruck.findAll({}).then(function(dbfoodTrucks) {
+    //   res.render("index", {
+    //     msg: "Welcome!",
+    //     foodTrucks: dbfoodTrucks
+    //   });
+    // });
+    res.render("search");
+  });
+
+  app.get("/index", function(req, res) {
+    // db.FoodTruck.findAll({}).then(function(dbfoodTrucks) {
+    //   res.render("index", {
+    //     msg: "Welcome!",
+    //     foodTrucks: dbfoodTrucks
+    //   });
+    // });
+    res.render("index");
   });
 
   // Load foodTruck page and pass in an foodTruck by id
@@ -23,7 +34,7 @@ module.exports = function(app) {
   });
 
   // Render 404 page for any unmatched routes
-  app.get("*", function(req, res) {
-    res.render("404");
-  });
+  // app.get("*", function(req, res) {
+  //   res.render("404");
+  // });
 };
