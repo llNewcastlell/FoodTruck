@@ -1,11 +1,80 @@
-.list-group-item {
-  line-height: 2.5;
+#header{
+  background-color: white;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  font-family: 'Jacques Francois Shadow', cursive;
+  border: 8px;
+  border-style: solid;
+  border-color: black;
 }
+
+
+#headerText{
+  font-size: 100px;
+  color: rgb(37, 85, 64);
+}
+
+.a{
+  font-family: 'Cutive Mono', monospace;
+  color: black;
+}
+
+/* .dropdown{
+  z-index: 1;
+  position: absolute;
+  bottom: 1000;
+  right:1000; */
+  /* left:0; */
+ 
+/* } */
+
+#dropdownMenuButton{
+ background-color: black;
+ color: white;
+ font-family: 'Cutive Mono', monospace;
+ z-index: 1;
+ position: absolute;
+ bottom: 1000;
+ right:1000;
+}
+
+#searchDivBackground{
+  background-image: url("https://cmkt-image-prd.global.ssl.fastly.net/0.1.0/ps/1311676/580/386/m2/fpnw/wm0/truck-.jpg?1464292222&s=4c30328958b6d1a18450a4f5cbf8f19e");
+
+  background-size: 800px;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 0;
+  /* object-fit: fill; */
+/* background-color: aquamarine; */
+  /* background-attachment: fixed; */
+  height: 500px;
+  width: 400px;
+  text-align: center;
+  padding-left: 0;
+  border: 50px;
+  border-style: solid;
+  border-color: rgb(37, 85, 64);
+}
+
+#nav{
+background-color: black;
+color: white !important;
+}
+.nav-link{
+  color: white !important;
+}
+
+
+
+
 
 /* Map styling */
 #mapid {
   height: 180px;
 }
+
 /* font-family: 'Monoton', cursive;
 font-family: 'Cabin Sketch', cursive;
 font-family: 'Fredericka the Great', cursive;
