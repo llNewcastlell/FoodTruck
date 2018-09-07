@@ -9,23 +9,30 @@ module.exports = function(app) {
     //     foodTrucks: dbfoodTrucks
     //   });
     // });
+    res.render("index");
+    console.log("Did the page work?");
   });
 
   // Load foodTruck page and pass in an foodTruck by id
-  app.get("/foodTruck/:id", function(req, res) {
-    db.FOODTRUCKSAMPLE.findOne({
-      where: {
-        id: req.params.id
-      }
-    }).then(function(FOODTRUCKSAMPLE) {
-      res.render("foodTruck", {
-        foodTruck: FOODTRUCKSAMPLE
-      });
-    });
+  // app.get("/foodTruck/:id", function(req, res) {
+  //   db.FOODTRUCKSAMPLE.findOne({
+  //     where: {
+  //       id: req.params.id
+  //     }
+  //   }).then(function(FOODTRUCKSAMPLE) {
+  //     res.render("search", {
+  //       foodTruck: FOODTRUCKSAMPLE
+  //     });
+  //   });
+  // });
+
+  app.get("/search", function(req, res) {
+    res.render("search");
+    console.log("search, food truck page");
   });
 
   // Render 404 page for any unmatched routes
-  app.get("*", function(req, res) {
-    res.render("404");
-  });
+  // app.get("*", function(req, res) {
+  //   res.render("404");
+  // });
 };
