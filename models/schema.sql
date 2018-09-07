@@ -1,4 +1,0 @@
-DROP DATABASE IF EXISTS foodTruckDB;
-CREATE DATABASE foodTruckDB;
-
-

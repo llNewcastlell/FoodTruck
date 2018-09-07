@@ -9,6 +9,7 @@
   border-color: black;
 }
 
+
 #headerText{
   font-size: 100px;
   color: rgb(37, 85, 64);
@@ -67,6 +68,12 @@ color: white !important;
 
 
 
+
+
+/* Map styling */
+#mapid {
+  height: 180px;
+}
 
 /* font-family: 'Monoton', cursive;
 font-family: 'Cabin Sketch', cursive;
