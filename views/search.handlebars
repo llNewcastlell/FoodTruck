@@ -36,12 +36,15 @@
       <!-- <div id="searchDiv"> -->
       {{!-- Dropdown menu for user to select type of cuisine --}}
       <div class="dropdown">
-        <button class="btn btn btn-lg dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
+
+        <button class="btn btn btn-lg dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+
           Dropdown button
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <div class="list-group">
+
             <button type="button" id="american" class="list-group-item list-group-item-action">American</button>
             <button type="button" id="barbeque" class="list-group-item list-group-item-action">Barbeque</button>
             <button type="button" id="breakfast" class="list-group-item list-group-item-action">Breakfast</button>
@@ -69,6 +72,7 @@
             <button type="button" id="sweetsAndTreats" class="list-group-item list-group-item-action">Sweets and Treats</button>
             <button type="button" id="venezuelan" class="list-group-item list-group-item-action">Venezuelan</button>
 
+
           </div>
         </div>
       </div>
@@ -82,16 +86,14 @@
   <div class="row">
     <div class="col-sm-12">
       <div id="mapid">
-        {{!-- dlfkjdlkfjdslfkjlfkjds;kjfdlakfj;ladskjf;laksjflk
-        fdlkjdsl;fjadlfkjalfkjl;fkjsadjf; --}}
+
       </div>
     </div>
   </div>
 </div>
 
 
-{{!-- Div where the food trucks will be displayed after the server returns the results based on the user's request.
---}}
+{{!-- Div where the food trucks will be displayed after the server returns the results based on the user's request. --}}
 <div id="results">
 
 </div>
@@ -102,7 +104,31 @@
   crossorigin="" />
 
 <script>
+
+
+  var baseCoords = [39.7452, 104.9922];
   var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+  var marker = L.marker([39.678259, -104.964123],{
+    draggable:true
+  }).addTo(mymap);
+  marker.bindPopup("<b>MMMmmmm</b><br>Tasty Food Truck.").openPopup();
+  
+
+  var popup = L.popup();
+
+
+/*
+If you click on the map, it will provide you with the long.
+*/
+  function onMapClick(e) {
+    popup
+      .setLatLng(e.latlng)
+      .setContent("You clicked the map at " + e.latlng.toString())
+      .openOn(mymap);
+  }
+
+  mymap.on('click', onMapClick);
+
 
   L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -116,18 +142,23 @@
     setView: true,
     maxZoom: 16,
     enableHighAccuracy: true
+
   });
+
+
+
+
 </script>
 
 <style>
   #mapid {
     height: 500px;
-    width: 500px;
+    width: 1100px;
   }
 </style>
 
-{{!-- Original Example --}}
-{{!-- <div class="container">
+{{!-- Original Example --}} {{!--
+<div class="container">
   <div class="jumbotron mt-4">
     <h1 class="display-4 text-center">404 Not Found
       <span role="img" aria-label="Face with rolling eyes">🙄</span>
