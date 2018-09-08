@@ -2,19 +2,9 @@ CREATE database FOODTRUCKSAMPLE;
 
 USE FOODTRUCKSAMPLE;
 
-CREATE TABLE FOODTRUCK (
-id int(6) not null auto_increment,
-name varchar(50) not null,
-imglink varchar(100) not null,
-foodType varchar(100) not null, 
-description varchar (1000) not null, 
-menulink varchar(50) not null, 
-price varchar(4) not null,
-phone varchar(13) not null, 
-primary key (id)
-);
 
-INSERT into FoodTruck (name,imglink,foodtype,description,menulink,price,phone)
+
+INSERT into FoodTrucks (name,imglink,foodtype,description,menulink,price,phone)
 VALUES("MC2 Ice Cream Co.","NEED IMAGE","Ice Cream, Sweets & Treats, Desserts","Our unorthodox approiach to ice cream leads us to new, different and exciting flavors that have never been imagined. We get inspired from more than just the bake shop. We us ingredients from every part of the kitchen. The best ice cream requires the best ingredients and using Pure, Local and fresh ingredients helps us create our one of a kind flavors.","https://www.mc2icecreamco.com/","$","720-499-4099"),
 
 ("Rollin' Bones BBQ","NEED IMAGE","Barbeque","Rollin' Bones BBQ is Colorado's finest pit BBQ food truck. Brisket, ribs, pulled pork and chicken with homemade sauces that span the US BBQ circuit.","https://rollinbonesbbq.com/","$$","303-217-1799"),
