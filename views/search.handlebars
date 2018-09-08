@@ -36,19 +36,43 @@
       <!-- <div id="searchDiv"> -->
       {{!-- Dropdown menu for user to select type of cuisine --}}
       <div class="dropdown">
+
         <button class="btn btn btn-lg dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
           aria-expanded="false">
+
           Dropdown button
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <div class="list-group">
-            <button type="button" class="list-group-item list-group-item-action">Dapibus ac facilisis in
-            </button>
-            <button type="button" class="list-group-item list-group-item-action">Morbi leo risus</button>
-            <button type="button" class="list-group-item list-group-item-action">Porta ac consectetur ac
-            </button>
-            <button type="button" class="list-group-item list-group-item-action" disabled>Vestibulum at eros
-            </button>
+
+            <button type="button" id="american" class="list-group-item list-group-item-action">American</button>
+            <button type="button" id="barbeque" class="list-group-item list-group-item-action">Barbeque</button>
+            <button type="button" id="breakfast" class="list-group-item list-group-item-action">Breakfast</button>
+            <button type="button" id="burgers" class="list-group-item list-group-item-action">Burgers</button>
+            <button type="button" id="caribbean" class="list-group-item list-group-item-action">Caribbean</button>
+            <button type="button" id="coffeeAndBeverages" class="list-group-item list-group-item-action">Coffee and
+              Beverages</button>
+            <button type="button" id="comfortFood" class="list-group-item list-group-item-action">Comfort Food</button>
+            <button type="button" id="desserts" class="list-group-item list-group-item-action">Desserts</button>
+            <button type="button" id="filipino" class="list-group-item list-group-item-action">Filipino</button>
+            <button type="button" id="glutenFree" class="list-group-item list-group-item-action">Gluten Free</button>
+            <button type="button" id="hotDogs" class="list-group-item list-group-item-action">Hot Dogs</button>
+            <button type="button" id="iceCream" class="list-group-item list-group-item-action">Ice Cream</button>
+            <button type="button" id="italian" class="list-group-item list-group-item-action">Italian</button>
+            <button type="button" id="latinAmerican" class="list-group-item list-group-item-action">Latin American</button>
+            <button type="button" id="mediterranean" class="list-group-item list-group-item-action">Mediterranean</button>
+            <button type="button" id="mexican" class="list-group-item list-group-item-action">Mexican</button>
+            <button type="button" id="middleEastern" class="list-group-item list-group-item-action">Middle Eastern</button>
+            <button type="button" id="pizza" class="list-group-item list-group-item-action">Pizza</button>
+            <button type="button" id="polis" class="list-group-item list-group-item-action">Polis, Czech/Slovakian,
+              Ukrainian</button>
+            <button type="button" id="puertoRicanFood" class="list-group-item list-group-item-action">Puerto Rican</button>
+            <button type="button" id="sandwiches" class="list-group-item list-group-item-action">Sandwiches</button>
+            <button type="button" id="seafood" class="list-group-item list-group-item-action">Seafood</button>
+            <button type="button" id="sweetsAndTreats" class="list-group-item list-group-item-action">Sweets and Treats</button>
+            <button type="button" id="venezuelan" class="list-group-item list-group-item-action">Venezuelan</button>
+
+
           </div>
         </div>
       </div>
@@ -81,6 +105,7 @@
 
 <script>
 
+
   var baseCoords = [39.7452, 104.9922];
   var mymap = L.map('mapid').setView([51.505, -0.09], 13);
   var marker = L.marker([39.678259, -104.964123],{
@@ -103,6 +128,7 @@ If you click on the map, it will provide you with the long.
   }
 
   mymap.on('click', onMapClick);
+
 
   L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
