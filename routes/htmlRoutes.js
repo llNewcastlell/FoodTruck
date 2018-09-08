@@ -3,7 +3,6 @@ var db = require("../models");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-
     // db.FOODTRUCKSAMPLE.findAll({}).then(function(dbfoodTrucks) {
 
     //   res.render("index", {
@@ -12,8 +11,6 @@ module.exports = function(app) {
     //   });
     // });
     res.render("search");
-
-
   });
 
   // Load foodTruck page and pass in an foodTruck by id
@@ -38,4 +35,8 @@ module.exports = function(app) {
   // app.get("*", function(req, res) {
   //   res.render("404");
   // });
+
+  app.get("/index", function(req, res) {
+    res.render("index");
+  });
 };
