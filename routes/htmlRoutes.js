@@ -11,7 +11,7 @@ module.exports = function(app) {
     //     foodTrucks: dbfoodTrucks
     //   });
     // });
-    res.render("index");
+    res.render("search");
 
 
   });
