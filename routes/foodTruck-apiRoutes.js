@@ -2,10 +2,10 @@ var db = require("../models");
 
 module.exports = function(app) {
   app.get("/api/foodTruck", function(req, res) {
-    // 1. Add a join to include all of each FoodTruck's Posts
-    // db.FoodTruck.findAll({}).then(function(dbFoodTruck) {
-    //   res.json(dbFoodTruck);
-    // });
+    db.FoodTruck.findAll({}).then(function(FoodTruck) {
+      res.json(FoodTruck);
+      console.log(FoodTruck);
+    });
   });
 
   app.get("/api/foodTruck/:id", function(req, res) {
@@ -14,14 +14,14 @@ module.exports = function(app) {
     //   where: {
     //     id: req.params.id
     //   }
-    // }).then(function(dbFoodTruck) {
-    //   res.json(dbFoodTruck);
+    // }).then(function(FoodTruck) {
+    //   res.json(FoodTruck);
     // });
   });
 
   app.post("/api/foodTruck", function(req, res) {
-    db.FoodTruck.create(req.body).then(function(dbFoodTruck) {
-      res.json(dbFoodTruck);
+    db.FoodTruck.create(req.body).then(function(FoodTruck) {
+      res.json(FoodTruck);
     });
   });
 
@@ -30,8 +30,8 @@ module.exports = function(app) {
   //       where: {
   //         id: req.params.id
   //       }
-  //     }).then(function(dbFoodTruck) {
-  //       res.json(dbFoodTruck);
+  //     }).then(function(FoodTruck) {
+  //       res.json(FoodTruck);
   //     });
   //   });
 };
