@@ -1,34 +1,12 @@
-{{!-- Header --}}
+{{>header}}
 
-<div id="header" class="jumbotron jumbotron-fluid">
-  <div class="container">
-
-    <h1 id="headerText" class="display-4">Food Truck Forager</h1>
-
-  </div>
-
-
-</div>
 
 <div class="container">
   <div class="row">
     <div class="col-sm-2" id="nav">
       {{!-- Side Navbar --}}
 
-      <nav class="nav flex-column">
-        <br>
-        <br>
-        <br>
-
-        <a class="nav-link a disabled" href="#">Home</a>
-        <br>
-        <a class="nav-link a disabled" href="#">Search</a>
-        <br>
-        <a class="nav-link a disabled" href="#">Your Account</a>
-        <br>
-        <a class="nav-link a disabled" href="#">Log Out</a>
-
-      </nav>
+      {{>navbar}}
     </div>
 
     {{!-- Box to hold image of food truck and search-by-food dropdown menu (and add style)--}}

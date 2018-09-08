@@ -5,8 +5,8 @@
   padding-bottom: 20px;
   font-family: 'Jacques Francois Shadow', cursive;
   border: 8px;
-  border-style: solid;
-  border-color: black;
+  /* border-style: solid;
+  border-color: black; */
 }
 
 
@@ -58,6 +58,20 @@
   border-color: rgb(37, 85, 64);
 }
 
+#topRated{
+  z-index: 0;
+  /* object-fit: fill; */
+background-color: rgb(37, 85, 64);
+  /* background-attachment: fixed; */
+  height: 500px;
+  width: 400px;
+  text-align: center;
+  padding-left: 0;
+  border: 50px;
+  border-style: solid;
+  border-color: rgb(37, 85, 64);
+}
+
 #nav{
 background-color: black;
 color: white !important;
@@ -66,7 +80,12 @@ color: white !important;
   color: white !important;
 }
 
+#forage{
+  color: rgb(33, 65, 51);
+  font-family: 'Bungee Outline', cursive !important;
+  font-size: 160px
 
+}
 
 
 

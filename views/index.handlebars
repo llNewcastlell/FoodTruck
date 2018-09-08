@@ -1,24 +1,26 @@
 {{!-- This is the "home" page where the 3 top-rated food trucks will be displayed --}}
 
-
-{{!-- Header --}}
-<div id="header" class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <h1 id="headerText" class="display-4">Food Truck Forager</h1>
-  </div>
-</div>
-{{!-- Main section of the home page --}}
+{{>header}}
+{{!-- main content --}}
 <div class="container">
   <div class="row">
-    <div class="col-sm-3">
+    <div class="col-sm-2" id="nav">
       {{!-- Side Navbar --}}
-      <nav class="nav flex-column">
-        <a class="nav-link active" href="#">Home</a>
-        <a class="nav-link" href="/search">Search</a>
-        <a class="nav-link" href="#">Your Account</a>
-        <a class="nav-link disabled" href="#">Log Out</a>
-      </nav>
+{{>navbar}}
+     
     </div>
+
+    {{!-- Box to hold image of food truck and search-by-food dropdown menu (and add style)--}}
+    <div class="col-sm-10" id="topRated">
+    <p id="forage">Forage</p>
+    </div>
+
+
+  </div>
+</div>
+
+
+
     {{!-- Box to hold images and info of top 3 food trucks--}}
     <div class="col-sm-9" id="topTrucksBackground">
       <div id="topTrucks">
