@@ -16,6 +16,7 @@ module.exports = function(app) {
       }
     }).then(function(FoodTruck) {
       res.json(FoodTruck);
+      console.log(FoodTruck);
     });
   });
 

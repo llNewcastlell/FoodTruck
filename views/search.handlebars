@@ -15,23 +15,26 @@
       {{!-- Dropdown menu for user to select type of cuisine --}}
       <div class="dropdown">
 
-        <button class="btn btn btn-lg dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-          aria-expanded="false">
+        <button class="btn btn btn-lg dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
 
           Dropdown button
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <div class="list-group">
 
-            {{!-- <button type="button" id="american" class="list-group-item list-group-item-action">American</button> --}}
+            {{!-- <button type="button" id="american" class="list-group-item list-group-item-action">American</button>
+            --}}
             <button type="button" id="bbq" class="list-group-item list-group-item-action foodTypeBtn">BBQ</button>
             {{!-- <button type="button" id="breakfast" class="list-group-item list-group-item-action">Breakfast</button>
             <button type="button" id="burgers" class="list-group-item list-group-item-action">Burgers</button>
             <button type="button" id="caribbean" class="list-group-item list-group-item-action">Caribbean</button>
             <button type="button" id="coffeeAndBeverages" class="list-group-item list-group-item-action">Coffee and
               Beverages</button>
-            <button type="button" id="comfortFood" class="list-group-item list-group-item-action">Comfort Food</button> --}}
-            <button type="button" id="desserts" class="list-group-item list-group-item-action foodTypeBtn">Sweets and Treats</button>
+            <button type="button" id="comfortFood" class="list-group-item list-group-item-action">Comfort Food</button>
+            --}}
+            <button type="button" id="desserts" class="list-group-item list-group-item-action foodTypeBtn">Sweets and
+              Treats</button>
             {{!-- <button type="button" id="filipino" class="list-group-item list-group-item-action">Filipino</button>
             <button type="button" id="glutenFree" class="list-group-item list-group-item-action">Gluten Free</button>
             <button type="button" id="hotDogs" class="list-group-item list-group-item-action">Hot Dogs</button>
@@ -40,16 +43,18 @@
             <button type="button" id="latinAmerican" class="list-group-item list-group-item-action">Latin American</button>
             <button type="button" id="mediterranean" class="list-group-item list-group-item-action">Mediterranean</button>
             <button type="button" id="mexican" class="list-group-item list-group-item-action">Mexican</button>
-            <button type="button" id="middleEastern" class="list-group-item list-group-item-action">Middle Eastern</button> --}}
+            <button type="button" id="middleEastern" class="list-group-item list-group-item-action">Middle Eastern</button>
+            --}}
             <button type="button" id="pizza" class="list-group-item list-group-item-action foodTypeBtn">Pizza</button>
-            {{!-- <button type="button" id="polis" class="list-group-item list-group-item-action">Polis, Czech/Slovakian,
+            {{!-- <button type="button" id="polis" class="list-group-item list-group-item-action">Polis,
+              Czech/Slovakian,
               Ukrainian</button>
             <button type="button" id="puertoRicanFood" class="list-group-item list-group-item-action">Puerto Rican</button>
             <button type="button" id="sandwiches" class="list-group-item list-group-item-action">Sandwiches</button>
             <button type="button" id="seafood" class="list-group-item list-group-item-action">Seafood</button>
             <button type="button" id="sweetsAndTreats" class="list-group-item list-group-item-action">Sweets and Treats</button>
             <button type="button" id="venezuelan" class="list-group-item list-group-item-action">Venezuelan</button>
- --}}
+            --}}
 
           </div>
         </div>
@@ -60,45 +65,45 @@
 
   </div>
 </div>
-<div class="container" id="map">
-  <div class="row">
-    <div class="col-sm-12">
+<div class="row">
+  <div class="container" id="map">
+    <div class="col-sm-8">
       <div id="mapid">
-
       </div>
+    </div>
+  </div>
+
+  {{!-- Div where the food trucks will be displayed after the server returns the results based on the user's request.
+  --}}
+  <div class="col-sm-4">
+    <div id="results">
+      {{> trucks}}
     </div>
   </div>
 </div>
 
+{{!-- <script src="/js/map.js"></script> --}}
 
-{{!-- Div where the food trucks will be displayed after the server returns the results based on the user's request. --}}
-<div id="results">
 
-</div>
-
-<script src="/js/map.js"></script>
-<script src="/js/truckSearch.js"></script>
-
+{{!-- leaflet stylysheet --}}
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
   crossorigin="" />
 
 <script>
-
-
   var baseCoords = [39.7452, 104.9922];
   var mymap = L.map('mapid').setView([51.505, -0.09], 13);
-  var marker = L.marker([39.678259, -104.964123],{
-    draggable:true
+  var marker = L.marker([39.678259, -104.964123], {
+    draggable: true
   }).addTo(mymap);
   marker.bindPopup("<b>MMMmmmm</b><br>Tasty Food Truck.").openPopup();
-  
+
 
   var popup = L.popup();
 
 
-/*
-If you click on the map, it will provide you with the long.
-*/
+  /*
+  If you click on the map, it will provide you with the long.
+  */
   function onMapClick(e) {
     popup
       .setLatLng(e.latlng)
@@ -123,10 +128,6 @@ If you click on the map, it will provide you with the long.
     enableHighAccuracy: true
 
   });
-
-
-
-
 </script>
 
 <style>
