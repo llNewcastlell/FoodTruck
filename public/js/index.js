@@ -6,26 +6,11 @@
 
 // // The API object contains methods for each kind of request we'll make
 // var API = {
-//   savefoodTruck: function(foodTruck) {
-//     return $.ajax({
-//       headers: {
-//         "Content-Type": "application/json"
-//       },
-//       type: "POST",
-//       url: "api/foodTruck",
-//       data: JSON.stringify(foodTruck)
-//     });
-//   },
+
 //   getfoodTrucks: function() {
 //     return $.ajax({
 //       url: "api/foodTruck",
 //       type: "GET"
-//     });
-//   },
-//   deletefoodTruck: function(id) {
-//     return $.ajax({
-//       url: "api/foodTruck/" + id,
-//       type: "DELETE"
 //     });
 //   }
 // };

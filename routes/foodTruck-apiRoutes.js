@@ -8,15 +8,16 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/api/foodTruck/:id", function(req, res) {
+  app.get("/api/foodTruck/foodType/:foodType", function(req, res) {
     // 2; Add a join to include all of the FoodTruck's Posts here
-    // db.FoodTruck.findOne({
-    //   where: {
-    //     id: req.params.id
-    //   }
-    // }).then(function(FoodTruck) {
-    //   res.json(FoodTruck);
-    // });
+    db.FoodTruck.findAll({
+      where: {
+        foodType: req.params.foodType
+      }
+    }).then(function(FoodTruck) {
+      res.json(FoodTruck);
+      console.log(FoodTruck);
+    });
   });
 
   app.post("/api/foodTruck", function(req, res) {
