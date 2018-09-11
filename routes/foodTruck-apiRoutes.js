@@ -1,26 +1,28 @@
 var db = require("../models");
 
-module.exports = function(app) {
-  app.get("/api/foodTruck", function(req, res) {
-    db.FoodTruck.findAll({}).then(function(FoodTruck) {
+module.exports = function (app) {
+  app.get("/api/foodTruck", function (req, res) {
+    db.FoodTruck.findAll({}).then(function (FoodTruck) {
       res.json(FoodTruck);
-      console.log(FoodTruck);
+      console.log("$$$$", FoodTruck);
     });
   });
 
-  app.get("/api/foodTruck/:id", function(req, res) {
+  app.get("/api/foodTruck/:foodType", function (req, res) {
+    console.log("get route is working");
     // 2; Add a join to include all of the FoodTruck's Posts here
-    // db.FoodTruck.findOne({
-    //   where: {
-    //     id: req.params.id
-    //   }
-    // }).then(function(FoodTruck) {
-    //   res.json(FoodTruck);
-    // });
+    db.FoodTruck.findAll({
+      where: {
+        foodType: req.params.foodType
+      }
+    }).then(function(FoodTruck) {
+      console.log("**********", FoodTruck);
+      res.json(FoodTruck);
+    });
   });
 
-  app.post("/api/foodTruck", function(req, res) {
-    db.FoodTruck.create(req.body).then(function(FoodTruck) {
+  app.post("/api/foodTruck", function (req, res) {
+    db.FoodTruck.create(req.body).then(function (FoodTruck) {
       res.json(FoodTruck);
     });
   });

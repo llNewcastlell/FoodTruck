@@ -8,11 +8,8 @@ var db = require("./models");
 var app = express();
 var PORT = process.env.PORT || 3000;
 
-<<<<<<< HEAD
 app.use(express.static("public"));
 
-=======
->>>>>>> master
 // Middleware
 app.use(
   bodyParser.urlencoded({

@@ -4,7 +4,7 @@
 
     "password": "v03041980m!!!",
 
-    "database": "FOODTRUCKSAMPLE",
+    "database": "foodtrucksample",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },

@@ -4,9 +4,7 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-2" id="nav">
-      {{!-- Side Navbar --}}
-
-      {{>navbar}}
+      {{!-- Side Navbar --}} {{>navbar}}
     </div>
 
     {{!-- Box to hold image of food truck and search-by-food dropdown menu (and add style)--}}
@@ -23,32 +21,35 @@
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <div class="list-group">
 
-            <button type="button" id="american" class="list-group-item list-group-item-action">American</button>
-            <button type="button" id="barbeque" class="list-group-item list-group-item-action">Barbeque</button>
-            <button type="button" id="breakfast" class="list-group-item list-group-item-action">Breakfast</button>
-            <button type="button" id="burgers" class="list-group-item list-group-item-action">Burgers</button>
-            <button type="button" id="caribbean" class="list-group-item list-group-item-action">Caribbean</button>
-            <button type="button" id="coffeeAndBeverages" class="list-group-item list-group-item-action">Coffee and
-              Beverages</button>
-            <button type="button" id="comfortFood" class="list-group-item list-group-item-action">Comfort Food</button>
-            <button type="button" id="desserts" class="list-group-item list-group-item-action">Desserts</button>
-            <button type="button" id="filipino" class="list-group-item list-group-item-action">Filipino</button>
-            <button type="button" id="glutenFree" class="list-group-item list-group-item-action">Gluten Free</button>
-            <button type="button" id="hotDogs" class="list-group-item list-group-item-action">Hot Dogs</button>
-            <button type="button" id="iceCream" class="list-group-item list-group-item-action">Ice Cream</button>
-            <button type="button" id="italian" class="list-group-item list-group-item-action">Italian</button>
-            <button type="button" id="latinAmerican" class="list-group-item list-group-item-action">Latin American</button>
-            <button type="button" id="mediterranean" class="list-group-item list-group-item-action">Mediterranean</button>
-            <button type="button" id="mexican" class="list-group-item list-group-item-action">Mexican</button>
-            <button type="button" id="middleEastern" class="list-group-item list-group-item-action">Middle Eastern</button>
-            <button type="button" id="pizza" class="list-group-item list-group-item-action">Pizza</button>
-            <button type="button" id="polis" class="list-group-item list-group-item-action">Polis, Czech/Slovakian,
-              Ukrainian</button>
-            <button type="button" id="puertoRicanFood" class="list-group-item list-group-item-action">Puerto Rican</button>
-            <button type="button" id="sandwiches" class="list-group-item list-group-item-action">Sandwiches</button>
-            <button type="button" id="seafood" class="list-group-item list-group-item-action">Seafood</button>
-            <button type="button" id="sweetsAndTreats" class="list-group-item list-group-item-action">Sweets and Treats</button>
-            <button type="button" id="venezuelan" class="list-group-item list-group-item-action">Venezuelan</button>
+            <button type="button" id="american" class="list-group-item list-group-item-action Foodtype">American</button>
+            <button type="button" id="BBQ" class="list-group-item list-group-item-action Foodtype">Barbeque</button>
+            <button type="button" id="breakfast" class="list-group-item list-group-item-action Foodtype">Breakfast</button>
+            <button type="button" id="burgers" class="list-group-item list-group-item-action Foodtype">Burgers</button>
+            <button type="button" id="caribbean" class="list-group-item list-group-item-action Foodtype">Caribbean</button>
+            <button type="button" id="coffeeAndBeverages" class="list-group-item list-group-item-action Foodtype">Coffee
+              and Beverages
+            </button>
+            <button type="button" id="comfortFood" class="list-group-item list-group-item-action Foodtype">Comfort Food</button>
+            <button type="button" id="desserts" class="list-group-item list-group-item-action Foodtype">Desserts</button>
+            <button type="button" id="filipino" class="list-group-item list-group-item-action Foodtype">Filipino</button>
+            <button type="button" id="glutenFree" class="list-group-item list-group-item-action Foodtype">Gluten Free</button>
+            <button type="button" id="hotDogs" class="list-group-item list-group-item-action Foodtype">Hot Dogs</button>
+            <button type="button" id="iceCream" class="list-group-item list-group-item-action Foodtype">Ice Cream</button>
+            <button type="button" id="italian" class="list-group-item list-group-item-action Foodtype">Italian</button>
+            <button type="button" id="latinAmerican" class="list-group-item list-group-item-action Foodtype">Latin American</button>
+            <button type="button" id="mediterranean" class="list-group-item list-group-item-action Foodtype">Mediterranean</button>
+            <button type="button" id="mexican" class="list-group-item list-group-item-action Foodtype">Mexican</button>
+            <button type="button" id="middleEastern" class="list-group-item list-group-item-action Foodtype">Middle Eastern</button>
+            <button type="button" id="pizza" class="list-group-item list-group-item-action Foodtype">Pizza</button>
+            <button type="button" id="polis" class="list-group-item list-group-item-action Foodtype">Polis, Czech/Slovakian,
+              Ukrainian
+            </button>
+            <button type="button" id="puertoRicanFood" class="list-group-item list-group-item-action Foodtype">Puerto Rican</button>
+            <button type="button" id="sandwiches" class="list-group-item list-group-item-action Foodtype">Sandwiches</button>
+            <button type="button" id="seafood" class="list-group-item list-group-item-action Foodtype">Seafood</button>
+            <button type="button" id="sweetsAndTreats" class="list-group-item list-group-item-action Foodtype">Sweets and
+              Treats</button>
+            <button type="button" id="venezuelan" class="list-group-item list-group-item-action Foodtype">Venezuelan</button>
 
 
           </div>
@@ -83,50 +84,81 @@
 
 <script>
 
+  var pinDrop = function (data) {
+    console.log("=======: ", data);
 
-  var baseCoords = [39.7452, 104.9922];
-  var mymap = L.map('mapid').setView([51.505, -0.09], 13);
-  var marker = L.marker([39.678259, -104.964123],{
-    draggable:true
-  }).addTo(mymap);
-  marker.bindPopup("<b>MMMmmmm</b><br>Tasty Food Truck.").openPopup();
-  
+    var baseCoords = [39.7452, 104.9922];
+    var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+    var marker = L.marker([39.678259, -104.964123], {
+      draggable: true,truckCustomMaker
+    },
+      {
+        /*truckCustomMaker*/
+      }).addTo(mymap);
+    marker.bindPopup("<b>MMMmmmm</b><br>Tasty Food Truck.").openPopup();
 
-  var popup = L.popup();
+
+    var popup = L.popup();
 
 
-/*
-If you click on the map, it will provide you with the long.
-*/
-  function onMapClick(e) {
-    popup
-      .setLatLng(e.latlng)
-      .setContent("You clicked the map at " + e.latlng.toString())
-      .openOn(mymap);
+    /*
+    If you click on the map, it will provide you with the long.
+    */
+    function onMapClick(e) {
+      popup
+        .setLatLng(e.latlng)
+        .setContent("You clicked the map at " + e.latlng.toString())
+        .openOn(mymap);
+    }
+
+    mymap.on('click', onMapClick);
+
+
+    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+      maxZoom: 18,
+      minZoom: 13,
+      id: 'mapbox.emerald',
+      accessToken: 'pk.eyJ1IjoibmNvb3BlcnciLCJhIjoiY2pscHYybHlqMjkybDNrb3NuODQ3enhkdyJ9.PYpALCFWSGmaKkhN35TpwA'
+    }).addTo(mymap);
+
+    var myLoc = mymap.locate({
+      setView: true,
+      maxZoom: 16,
+      enableHighAccuracy: true
+
+    });
+
+
+    var truckCustomMaker = L.icon({
+      iconUrl: "./public/images/marker.png",
+      iconSize: [34, 44],
+      iconAnchor: [20, 36],
+      popupAnchor: [-4, -36],
+      shadowUrl: "",
+      shadowSize: [68, 95],
+      shadowAnchor: [22, 94]
+    });
   }
+  pinDrop();
 
-  mymap.on('click', onMapClick);
-
-
-  L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    maxZoom: 18,
-    minZoom: 13,
-    id: 'mapbox.emerald',
-    accessToken: 'pk.eyJ1IjoibmNvb3BlcnciLCJhIjoiY2pscHYybHlqMjkybDNrb3NuODQ3enhkdyJ9.PYpALCFWSGmaKkhN35TpwA'
-  }).addTo(mymap);
-
-  var myLoc = mymap.locate({
-    setView: true,
-    maxZoom: 16,
-    enableHighAccuracy: true
-
-  });
-
+  $(document).on("click", ".Foodtype", function () {
+    var selected = $(this).attr("id");
+    console.log(selected);
+    $.get("/api/foodTruck/" + selected).then(function (data) {
+      for(i = 0; i > selected.length; i ++){
+        selected += data[i]
+         }
+      console.log("In call back *****======= ", data);
+      document.getElementById("mapid").innerHTML.text;
+      pinDrop(data);
+    })
+  })
 
 
 
 </script>
+
 
 <style>
   #mapid {
