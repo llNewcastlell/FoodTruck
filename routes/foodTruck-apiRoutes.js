@@ -8,16 +8,18 @@ module.exports = function (app) {
     });
   });
 
-  app.get("/api/foodTruck/:foodType", function (req, res) {
-    console.log("get route is working");
+
+  app.get("/api/foodTruck/:foodType", function(req, res) {
+
     // 2; Add a join to include all of the FoodTruck's Posts here
     db.FoodTruck.findAll({
       where: {
         foodType: req.params.foodType
       }
     }).then(function(FoodTruck) {
-      console.log("**********", FoodTruck);
       res.json(FoodTruck);
+      console.log(FoodTruck);
+
     });
   });
 
