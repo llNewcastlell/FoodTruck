@@ -2,6 +2,7 @@ CREATE database FOODTRUCKSAMPLE;
 
 USE FOODTRUCKSAMPLE;
 
+TRUNCATE TABLE foodtrucks;
 
 
 INSERT into FoodTrucks (name,imglink,foodtype,description,menulink,price,phone)
