@@ -50,46 +50,46 @@ $(document).ready(function() {
     }
     return newTr;
   }
-  // function createFtRow() {
-  //   for (i = 0; i < searchRows.length; i++) {
-  //     var newTr = $("<tr>");
-  //     //newTr.data("name", foodTruckData);
-  //     newTr.append("<td>" + foodTruckData.name + "</td>");
-  //     //newTr.append("<td>" + foodTruckData.foodType + "</td>");
-  //     //newTr.append("<td>" + foodTruckData.description + "</td>");
-  //     newTr.append(
-  //       "<td><a href='" + foodTruckData.menuLink + "'>Menu</a></td>"
-  //     );
-  //     newTr.append("<td>" + foodTruckData.price + "</td>");
-  //     //newTr.append("<td>" + foodTruckData.phone + "</td>");
-  //     console.log(newTr);
-  //     $(".truckrows").html(newTr);
-  //   }
-  //   return newTr;
-  // }
   function createFtRow() {
     for (i = 0; i < searchRows.length; i++) {
       var newTr = $("<tr>");
       //newTr.data("name", foodTruckData);
-      newTr.append("<td>" + searchRows[i].name + "</td>");
+      newTr.append("<td>" + foodTruckData.name + "</td>");
       //newTr.append("<td>" + foodTruckData.foodType + "</td>");
       //newTr.append("<td>" + foodTruckData.description + "</td>");
       newTr.append(
-        "<td><a href='" + searchRows[i].menuLink + "'>Menu</a></td>"
+        "<td><a href='" + foodTruckData.menuLink + "'>Menu</a></td>"
       );
-      newTr.append("<td>" + searchRows[i].price + "</td>");
+      newTr.append("<td>" + foodTruckData.price + "</td>");
       //newTr.append("<td>" + foodTruckData.phone + "</td>");
       console.log(newTr);
-      $(".truckRows").html(newTr);
+      $(".truckrows").html(newTr);
     }
     return newTr;
   }
+  // function createFtRow() {
+  //   for (i = 0; i < searchRows.length; i++) {
+  //     var newTr = $("<tr>");
+  //     //newTr.data("name", foodTruckData);
+  //     newTr.append("<td>" + searchRows[i].name + "</td>");
+  //     //newTr.append("<td>" + foodTruckData.foodType + "</td>");
+  //     //newTr.append("<td>" + foodTruckData.description + "</td>");
+  //     newTr.append(
+  //       "<td><a href='" + searchRows[i].menuLink + "'>Menu</a></td>"
+  //     );
+  //     newTr.append("<td>" + searchRows[i].price + "</td>");
+  //     //newTr.append("<td>" + foodTruckData.phone + "</td>");
+  //     console.log(newTr);
+  //     $(".truckRows").html(newTr);
+  //   }
+  //   return newTr;
+  // }
 
   var pinDrop = function (data) {
     console.log("=======: ", data);
 
     var baseCoords = [39.7452, 104.9922];
-    var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+    var mymap = L.map('mapid').setView([39.7452, 104.9922], 13);
     var marker = L.marker([39.678259, -104.964123], {
       draggable: true,
     }, {
