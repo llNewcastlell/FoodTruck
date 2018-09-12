@@ -39,4 +39,9 @@ module.exports = function(app) {
   app.get("/index", function(req, res) {
     res.render("index");
   });
+
+  // Tessa added this route to test the reviews page
+  app.get("/review", function(req, res) {
+    res.render("review");
+  });
 };
