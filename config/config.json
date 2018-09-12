@@ -2,9 +2,12 @@
   "development": {
     "username": "root",
 
-    "password": "CatDog!1",
 
-    "database": "FOODTRUCKSAMPLE",
+
+    "password": "v03041980m!!!",
+
+
+    "database": "foodtrucksample",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
@@ -16,10 +19,10 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
+    "username": "w0jz0um4g55kqdgt",
+    "password": "vbhljn4j4h6mxr09",
+    "database": "zkkohieb2ug9vcff",
+    "host": "bbj31ma8tye2kagi.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   }
 }

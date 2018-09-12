@@ -54,5 +54,6 @@ module.exports = function(sequelize, Sequelize) {
   
   FoodTruck.bulkCreate(truckSeed);
 
+ 
   return FoodTruck;
 };
