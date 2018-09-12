@@ -8,6 +8,12 @@ module.exports = function(sequelize, Sequelize) {
       onDelete: "cascade"
     });
   };
+
+  const userSeed = 
+    { name: "Test User1"
+    }; 
+
+    User.create(userSeed)
   return User;
 };
 
