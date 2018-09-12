@@ -1,5 +1,9 @@
-$(document).ready(function () {
-  $(".foodTypeBtn").on("click", function () {
+
+$(document).ready(function() {
+  var searchRows = [];
+
+  $(".foodTypeBtn").on("click", function() {
+
     console.log("What was clicked " + this.id);
     var search = this.id;
     console.log("search function for " + search);
@@ -12,29 +16,72 @@ $(document).ready(function () {
       console.log(results);
 
       //with results loop through
-      var searchRows = [];
+      //var searchRows = [];
       for (var i = 0; i < foodTruckdata.length; i++) {
-        searchRows.push(createFtRow(foodTruckdata[i]));
+
+        //searchRows.push(createFtRow(foodTruckdata[i]));
+        searchRows.push(foodTruckdata[i]);
 
       }
+      createFtRow();
+      console.log("var searchRows " + JSON.stringify(searchRows));
+      // var info = JSON.stringify(searchRows);
 
-      console.log(foodTruckdata);
+      //console.log(foodTruckdata);
       console.log("inside truck search");
     });
   });
 
   //Function to print foodtrucks in a row
-  function createFtRow(foodTruckData) {
-    var newTr = $("<tr>");
-    newTr.data("name", foodTruckData);
-    newTr.append("<td>" + foodTruckData.name + "</td>");
-    newTr.append("<td>" + foodTruckData.foodType + "</td>");
-    newTr.append("<td>" + foodTruckData.description + "</td>");
-    newTr.append("<td><a href='" + foodTruckData.menuLink + "'>Menu</a></td>");
-    newTr.append("<td>" + foodTruckData.price + "</td>");
-    newTr.append("<td>" + foodTruckData.phone + "</td>");
-    console.log(newTr);
-    $(".truckContainer").html(newTr);
+  function createFtRow() {
+    for (i = 0; i < searchRows.length; i++) {
+      var newTr = $("<tr>");
+      //newTr.data("name", foodTruckData);
+      newTr.append("<td>" + foodTruckData.name + "</td>");
+      //newTr.append("<td>" + foodTruckData.foodType + "</td>");
+      //newTr.append("<td>" + foodTruckData.description + "</td>");
+      newTr.append(
+        "<td><a href='" + foodTruckData.menuLink + "'>Menu</a></td>"
+      );
+      newTr.append("<td>" + foodTruckData.price + "</td>");
+      //newTr.append("<td>" + foodTruckData.phone + "</td>");
+      console.log(newTr);
+      $(".truckrows").html(newTr);
+    }
+    return newTr;
+  }
+  // function createFtRow() {
+  //   for (i = 0; i < searchRows.length; i++) {
+  //     var newTr = $("<tr>");
+  //     //newTr.data("name", foodTruckData);
+  //     newTr.append("<td>" + foodTruckData.name + "</td>");
+  //     //newTr.append("<td>" + foodTruckData.foodType + "</td>");
+  //     //newTr.append("<td>" + foodTruckData.description + "</td>");
+  //     newTr.append(
+  //       "<td><a href='" + foodTruckData.menuLink + "'>Menu</a></td>"
+  //     );
+  //     newTr.append("<td>" + foodTruckData.price + "</td>");
+  //     //newTr.append("<td>" + foodTruckData.phone + "</td>");
+  //     console.log(newTr);
+  //     $(".truckrows").html(newTr);
+  //   }
+  //   return newTr;
+  // }
+  function createFtRow() {
+    for (i = 0; i < searchRows.length; i++) {
+      var newTr = $("<tr>");
+      //newTr.data("name", foodTruckData);
+      newTr.append("<td>" + searchRows[i].name + "</td>");
+      //newTr.append("<td>" + foodTruckData.foodType + "</td>");
+      //newTr.append("<td>" + foodTruckData.description + "</td>");
+      newTr.append(
+        "<td><a href='" + searchRows[i].menuLink + "'>Menu</a></td>"
+      );
+      newTr.append("<td>" + searchRows[i].price + "</td>");
+      //newTr.append("<td>" + foodTruckData.phone + "</td>");
+      console.log(newTr);
+      $(".truckRows").html(newTr);
+    }
     return newTr;
   }
 
