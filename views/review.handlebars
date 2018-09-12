@@ -1,87 +1,83 @@
-
 {{>header}}
 {{!-- main content --}}
 <div class="container">
-  <div class="row">
-    <div class="col-sm-2" id="nav">
-      {{!-- Side Navbar --}}
-{{>navbar}}
-     
-    </div>
+    <div class="row">
+        <div class="col-sm-2" id="nav">
+            {{!-- Side Navbar --}}
+            {{>navbar}}
+        </div>
 
-    {{!-- Box to hold image of food truck and search-by-food dropdown menu (and add style)--}}
-    <div class="col-sm-10" id="topRated">
-    <p id="forage">Forage</p>
+        {{!-- Box to hold image of food truck and search-by-food dropdown menu (and add style)--}}
+        <div class="col-sm-10" id="topRated">
+            <p id="forage">Forage</p>
 
-     <div class="container">
-        <div class="row">
-            <div class="col-sm-10" id="reviewDiv">
-                
-                
-                <form id="reviewForm">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-10" id="reviewDiv">
 
-                    {{!-- -------- --}}
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                        <label class="form-check-label" for="inlineCheckbox1">1</label>
+                        <form id="reviewForm">
+                            {{!-- -------- --}}
+                            {{!-- <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                                <label class="form-check-label" for="inlineCheckbox1">1</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                                <label class="form-check-label" for="inlineCheckbox2">2</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3"
+                                    disabled>
+                                <label class="form-check-label" for="inlineCheckbox3">3 (disabled)</label>
+                            </div>
+
+                            --}}
+                            <div class="form-group row">
+                                <label for="inputEmail3" class="col-sm-2 col-form-label">Title</label>
+                                <div class="col-sm-10">
+                                    <input type="input" class="form-control" id="title" placeholder="Title your review">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="inputEmail3" class="col-sm-2 col-form-label">Leave a Review</label>
+                                <div class="col-sm-10">
+                                    <input type="input" class="form-control" id="body" placeholder="Tell us what you think">
+                                </div>
+                            </div>
+
+                            {{!-- <div class="form-group">
+                                <label for="example-description">Leave a Review</label>
+                                <textarea class="form-control" id="example-description body" aria-describedby="example-description"
+                                    placeholder="Tell us what you think"></textarea>
+                            </div> --}}
+
+                            <div class="form-group row">
+                                <label for="inputEmail3" class="col-sm-2 col-form-label">User Name</label>
+                                <div class="col-sm-10">
+                                    <input type="input" class="form-control" id="name" placeholder="Tell us what you think">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="inputEmail3" class="col-sm-2 col-form-label">Food Truck</label>
+                                <div class="col-sm-10">
+                                    <input type="input" class="form-control" id="foodTruck" placeholder="Name of Food Truck">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-sm-10">
+                                    <button type="submit" class="btn btn-primary">Post Review</button>
+                                </div>
+                            </div>
+                        </form>
+
                     </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                        <label class="form-check-label" for="inlineCheckbox2">2</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
-                        <label class="form-check-label" for="inlineCheckbox3">3 (disabled)</label>
-                    </div>
-                   
-               
-
-                    <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-2 col-form-label">Title</label>
-                        <div class="col-sm-10">
-                            <input type="input" class="form-control" id="title" placeholder="Tell us what you think">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-            <label for="example-description">Leave a Review</label>
-            <textarea class="form-control" id="example-description body" aria-describedby="example-description" placeholder="Tell us what you think"></textarea>
-          </div>
-
-             <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-2 col-form-label">User Name</label>
-                        <div class="col-sm-10">
-                            <input type="input" class="form-control" id="name" placeholder="Tell us what you think">
-                        </div>
-                    </div>
-
-                       <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-2 col-form-label">Food Truck</label>
-                        <div class="col-sm-10">
-                            <input type="input" class="form-control" id="foodTruck" placeholder="Tell us what you think">
-                        </div>
-                    </div>
-
-                    <div class="form-group row">
-                        <div class="col-sm-10">
-                            <button type="submit" class="btn btn-primary">Post Review</button>
-                        </div>
-                    </div>
-                </form>
-
-
-                <form action="/action_page.php">
-First name: <input type="text" name="FirstName" value="Mickey"><br>
-Last name: <input type="text" name="LastName" value="Mouse"><br>
-<input type="submit" class="rating" value="Submit">
-</form>
+                </div>
             </div>
         </div>
     </div>
-    </div>
-
-
-  </div>
 </div>
 
 
@@ -89,58 +85,17 @@ Last name: <input type="text" name="LastName" value="Mouse"><br>
 
 
 
-<script> 
-$("#reviewForm").on("submit", function(){
+<script>
+
+    $("#reviewForm").on("submit", function(){
     var newReview = {
         title: $("#title").val(), 
         body: $("#body").val(),
-        name: $("#name").val(), 
-        foodTruck: $("#foodTruck").val() 
+        UserId: $("#name").val(), 
+        FoodTruckId: $("#foodTruck").val() 
     }
-    $.post("/review", newReview, function(){
+    $.post("/api/reviews", newReview, function(){
         console.log("review sent")
     })
-
 })
-
 </script>
-
-
-
-
-
-{{!-- original example --}}
-{{!-- <div id="home">
-  <div class="container">
-    <div class="row">
-      <div class="col-8 offset-2">
-        <h1>{{msg}}</h1>
-        <h2>This is our Home Page!</h2>
-        <form class="clearfix mb-4" action="POST">
-          <div class="form-group">
-            <label for="example-text">Example Text</label>
-            <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
-          </div>
-          <div class="form-group">
-            <label for="example-description">Example Description</label>
-            <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
-          </div>
-          <button id="submit" class="btn btn-primary float-right">Submit</button>
-        </form>
-        <h3>Examples:</h3>
-        <ul id="example-list" class="list-group">
-          {{#each examples}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{this.text}}</a>
-            <button class="btn btn-danger float-right delete">ｘ</button>
-          </li>
-          {{/each}}
-        </ul>
-      </div>
-    </div>
-  </div>
-</div> --}} 
-
-{{!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="../public/js/index.js"></script>
-<script src="../public/js/map.js"></script> --}}
