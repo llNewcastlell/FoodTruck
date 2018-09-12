@@ -4,9 +4,8 @@ $(document).ready(function() {
   var searchRows = [];
   var lat;
   var long;
-  var truckName = "";
-  var price;
-  var menu;
+  var latArr = [];
+  var longArr = [];
   //
   //on click function for foodtype dropdown
   $(".foodTypeBtn").on("click", function() {
@@ -23,14 +22,13 @@ $(document).ready(function() {
 
       //with results loop through
       for (var i = 0; i < foodTruckdata.length; i++) {
+        latArr.push(foodTruckdata[i].latitude);
+        longArr.push(foodTruckdata[i].longitude);
+        
         searchRows.push(createFtRow(foodTruckdata[i]));
         //searchRows.push(foodTruckdata[i]);
         truckName = foodTruckdata[i].name;
-        lat = foodTruckdata[i].latitude;
-        long = foodTruckdata[i].longitude;
-        menu = "<a href='" + foodTruckdata[i].menu + "/>";
-        price = foodTruckdata[i].price;
-
+        Truckname = foodTruckdata[i].name;
         pinDrop(foodTruckdata[i]);
       }
       //createFtRow();
@@ -63,22 +61,35 @@ $(document).ready(function() {
 
     var baseCoords = [39.7452, 104.9922];
     var mymap = L.map("mapid").setView(baseCoords, 13);
+    //loop for 
+    for (var i = 0; i < latArr.length; i++) {
+      lat = latArr[i];
+      long = longArr[i];
+      console.log(lat);
+      console.log(long);
+      var marker = L.marker([lat, long], {
+        draggable: true
+      }).addTo(mymap);
+      marker.bindPopup("<b>" + foodTruckdata.name + "</b>").openPopup();
+
+      var popup = L.popup();
+      /* <p>" +
+        foodTruckdata.menuLink +
+        "<br>" +
+        foodTruckdata.price +
+        "</p>" */
+    }
     var marker = L.marker([lat, long], {
       draggable: true
     }).addTo(mymap);
-    marker
-      .bindPopup(
-        "<b>" +
-          foodTruckdata.name +
-          "</b><p>" +
-          foodTruckdata.menu +
-          foodTruckdata.price +
-          "</p>"
-      )
-      .openPopup();
+    marker.bindPopup("<b>" + foodTruckdata.name + "</b>").openPopup();
 
     var popup = L.popup();
-
+    /* <p>" +
+          foodTruckdata.menuLink +
+          "<br>" +
+          foodTruckdata.price +
+          "</p>" */
     /*
     If you click on the map, it will provide you with the long.
     */
