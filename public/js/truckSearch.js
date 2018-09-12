@@ -1,22 +1,20 @@
 //Once the document is ready run the stuff
-$(document).ready(function() {
+$(document).ready(function () {
   //global variables to use in all functions
   var searchRows = [];
   var lat;
   var long;
-  var truckName = "";
-  var price;
-  var menu;
+
   //
   //on click function for foodtype dropdown
-  $(".foodTypeBtn").on("click", function() {
+  $(".foodTypeBtn").on("click", function () {
     console.log("What was clicked " + this.id);
     var search = this.id;
     console.log("search function for " + search);
     return $.ajax({
       url: "/api/foodTruck/" + search,
       type: "GET"
-    }).then(function(foodTruckdata) {
+    }).then(function (foodTruckdata) {
       //console.log("did I get it?");
       var results = JSON.stringify(foodTruckdata);
       console.log(results);
@@ -26,8 +24,8 @@ $(document).ready(function() {
         searchRows.push(createFtRow(foodTruckdata[i]));
         //searchRows.push(foodTruckdata[i]);
         truckName = foodTruckdata[i].name;
-        lat = foodTruckdata[i].latitude;
-        long = foodTruckdata[i].longitude;
+        // lat = foodTruckdata[i].latitude;
+        // long = foodTruckdata[i].longitude;
         menu = "<a href='" + foodTruckdata[i].menu + "/>";
         price = foodTruckdata[i].price;
 
@@ -58,27 +56,36 @@ $(document).ready(function() {
     return newTr;
   }
 
-
-  var pinDrop = function(foodTruckdata) {
+  var pinDrop = function (foodTruckdata) {
     console.log("=======: ", foodTruckdata);
-
     var baseCoords = [39.7452, 104.9922];
     var mymap = L.map("mapid").setView(baseCoords, 13);
-    var marker = L.marker([lat, long], {
-      draggable: true
-    }).addTo(mymap);
-    marker
-      .bindPopup(
-        "<b>" +
-          foodTruckdata.name +
-          "</b><p>" +
-          foodTruckdata.menu +
-          foodTruckdata.price +
-          "</p>"
-      )
-      .openPopup();
 
-    var popup = L.popup();
+    for (var i = 0; i < foodTruckdata.length; i++) {
+      console.log("*********");
+      lat = foodTruckdata[i].latitude;
+      long = foodTruckdata[i].longitude;
+      var marker = L.marker([lat, long], {
+        draggable: true
+      }).addTo(mymap);
+      marker
+        .bindPopup(
+          "<b>" +
+          foodTruckdata[i].name +
+          "</b> <p>" +
+          foodTruckdata[i].menuLink +
+          "<br>" +
+          foodTruckdata[i].price +
+          "<br>" +
+
+          "</p>"
+        )
+        .openPopup();
+
+      var popup = L.popup();
+    }
+
+
 
     /*
     If you click on the map, it will provide you with the long.
@@ -93,15 +100,12 @@ $(document).ready(function() {
     mymap.on("click", onMapClick);
 
     L.tileLayer(
-      "https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}",
-      {
-        attribution:
-          "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
+      "https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
         maxZoom: 18,
         minZoom: 13,
         id: "mapbox.emerald",
-        accessToken:
-          "pk.eyJ1IjoibmNvb3BlcnciLCJhIjoiY2pscHYybHlqMjkybDNrb3NuODQ3enhkdyJ9.PYpALCFWSGmaKkhN35TpwA"
+        accessToken: "pk.eyJ1IjoibmNvb3BlcnciLCJhIjoiY2pscHYybHlqMjkybDNrb3NuODQ3enhkdyJ9.PYpALCFWSGmaKkhN35TpwA"
       }
     ).addTo(mymap);
 
