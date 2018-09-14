@@ -20,14 +20,13 @@
   color: black;
 }
 
-/* .dropdown{
-  z-index: 1;
-  position: absolute;
-  bottom: 1000;
-  right:1000; */
-  /* left:0; */
+.dropdown-menu{
+    position: absolute;
+    height: auto;
+    max-height: 300px;
+    overflow-x: hidden;
  
-/* } */
+ } 
 
 #dropdownMenuButton{
  background-color: black;
