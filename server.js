@@ -33,7 +33,7 @@ require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
 require("./routes/foodTruck-apiRoutes")(app);
 require("./routes/review-apiRoutes")(app);
-require("./routes/user-apiRoutes")(app);
+// require("./routes/user-apiRoutes")(app);
 
 // Added by Tessa -- Not sure if we should do this the way shown above or the way I have it below...
 // Import routes and give the server access to them.
