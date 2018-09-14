@@ -21,7 +21,7 @@ module.exports = function(sequelize, Sequelize) {
     [{
     name: 'MC2 Ice Cream Co.',
         imgLink: 'https://static.wixstatic.com/media/b8ae15_984dfafccdb14aaea1fa0193ec572e02~mv2_d_5915_3089_s_4_2.jpg/v1/fill/w_1024,h_1024,al_c,q_85,usm_0.66_1.00_0.01/b8ae15_984dfafccdb14aaea1fa0193ec572e02~mv2_d_5915_3089_s_4_2.webp',
-        foodType: 'Sweets & Treats',
+        foodType: 'desserts',
         description: 'Our unorthodox approach to ice cream leads us to new, different and exciting flavors.',
         menuLink: 'https://www.mc2icecreamco.com/',
         price: '$',
@@ -72,7 +72,30 @@ module.exports = function(sequelize, Sequelize) {
   phone: "123-456-7890",
   latitude: "39.6812",
   longitude: "-104.9678"
-}];
+},
+{
+  name: "Basecamp Provisions",
+  imgLink: "",
+  foodType: "American",
+  description: "Denver-Based Food Truck serving lunch bowls, burritos, and fresh brewed iced tea.",
+  menuLink: "https://www.basecampdenver.com/",
+  price: "$$",
+  phone: "123-456-7890",
+  latitude: "39.6712",
+  longitude: "-104.9778"
+},
+{
+  name: "A Taste of the Philippines",
+  imgLink: "",
+  foodType: "Filipino",
+  description: "A Taste of the Philippines offers the classic Filipino cuisine such as chicken adobo, lumpias, pancit, lechon kawali, turon and more....",
+  menuLink: "http://www.atasteofthephilippines.com",
+  price: "$$",
+  phone: "123-456-7890",
+  latitude: "39.712",
+  longitude: "-104.9878"
+}
+];
   
   FoodTruck.bulkCreate(truckSeed);
 
