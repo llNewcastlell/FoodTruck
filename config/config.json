@@ -2,7 +2,17 @@
   "development": {
     "username": "root",
 
+<<<<<<< HEAD
     "password": "Bbtmwntfc69",
+=======
+
+
+
+    "password": "",
+
+
+
+>>>>>>> 80fe576cd9ef8626e05cfa14a6842d845e665e04
     "database": "foodtrucksample",
     "host": "127.0.0.1",
     "dialect": "mysql"

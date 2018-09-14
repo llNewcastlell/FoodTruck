@@ -1,4 +1,4 @@
-#header{
+#header {
   background-color: white;
   text-align: center;
   padding-top: 10px;
@@ -10,36 +10,35 @@
 }
 
 
-#headerText{
+#headerText {
   font-size: 100px;
   color: rgb(37, 85, 64);
 }
 
-.a{
+.a {
   font-family: 'Cutive Mono', monospace;
   color: black;
 }
 
-/* .dropdown{
+.dropdown-menu {
+  max-height: 300px;
+  overflow: hidden;
+  overflow-y: auto;
+
+}
+
+#dropdownMenuButton {
+  background-color: black;
+  color: white;
+  font-family: 'Cutive Mono', monospace;
   z-index: 1;
   position: absolute;
   bottom: 1000;
-  right:1000; */
-  /* left:0; */
- 
-/* } */
-
-#dropdownMenuButton{
- background-color: black;
- color: white;
- font-family: 'Cutive Mono', monospace;
- z-index: 1;
- position: absolute;
- bottom: 1000;
- right:1000;
+  right: 1000;
+  max-height: 200px;
 }
 
-#searchDivBackground{
+#searchDivBackground {
   background-image: url("https://cmkt-image-prd.global.ssl.fastly.net/0.1.0/ps/1311676/580/386/m2/fpnw/wm0/truck-.jpg?1464292222&s=4c30328958b6d1a18450a4f5cbf8f19e");
 
   background-size: 800px;
@@ -47,7 +46,7 @@
   background-position: center;
   z-index: 0;
   /* object-fit: fill; */
-/* background-color: aquamarine; */
+  /* background-color: aquamarine; */
   /* background-attachment: fixed; */
   height: 500px;
   width: 400px;
@@ -58,10 +57,10 @@
   border-color: rgb(37, 85, 64);
 }
 
-#topRated{
+#topRated {
   z-index: 0;
   /* object-fit: fill; */
-background-color: rgb(37, 85, 64);
+  background-color: rgb(37, 85, 64);
   /* background-attachment: fixed; */
   height: 500px;
   width: 400px;
@@ -73,19 +72,19 @@ background-color: rgb(37, 85, 64);
   padding-bottom: 535px;
 }
 
-#nav{
-background-color: black;
-color: white !important;
-}
-.nav-link{
+#nav {
+  background-color: black;
   color: white !important;
 }
 
-#forage{
+.nav-link {
+  color: white !important;
+}
+
+#forage {
   color: rgb(33, 65, 51);
   font-family: 'Bungee Outline', cursive !important;
   font-size: 160px
-
 }
 
 
@@ -96,6 +95,7 @@ color: white !important;
   width: 1100px;
 }
 
+
 #container{
  font-family: 'Cutive Mono', monospace;
 }
@@ -103,6 +103,7 @@ color: white !important;
 .label{
   color: white;
 }
+
 
 /* font-family: 'Monoton', cursive;
 font-family: 'Cabin Sketch', cursive;
