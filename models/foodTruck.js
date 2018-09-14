@@ -17,6 +17,7 @@ module.exports = function(sequelize, Sequelize) {
     });
   };
 
+
   const truckSeed = 
     [{
     name: 'MC2 Ice Cream Co.',
@@ -96,8 +97,9 @@ module.exports = function(sequelize, Sequelize) {
   longitude: "-104.9878"
 }
 ];
+
   
-  FoodTruck.bulkCreate(truckSeed);
+  // FoodTruck.bulkCreate(truckSeed);
 
  
   return FoodTruck;
