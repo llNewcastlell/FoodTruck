@@ -96,6 +96,14 @@
 }
 
 
+#container{
+ font-family: 'Cutive Mono', monospace;
+}
+
+.label{
+  color: white;
+}
+
 
 /* font-family: 'Monoton', cursive;
 font-family: 'Cabin Sketch', cursive;
