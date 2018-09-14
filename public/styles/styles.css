@@ -70,6 +70,7 @@ background-color: rgb(37, 85, 64);
   border: 50px;
   border-style: solid;
   border-color: rgb(37, 85, 64);
+  padding-bottom: 535px;
 }
 
 #nav{
@@ -93,6 +94,14 @@ color: white !important;
 #mapid {
   height: 500px;
   width: 1100px;
+}
+
+#container{
+ font-family: 'Cutive Mono', monospace;
+}
+
+.label{
+  color: white;
 }
 
 /* font-family: 'Monoton', cursive;

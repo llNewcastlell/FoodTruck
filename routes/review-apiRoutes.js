@@ -65,11 +65,11 @@ module.exports = function(app) {
     });
   });
 
-  // PUT route for updating reviews
+  // POST route for updating reviews
   app.post("/api/reviews", function(req, res) {
     db.Review.create(req.body, {
       where: {
-        title: req.body.title, 
+        title: req.body.title,
         body: req.body.body,
         UserId: req.body.UserId,
         FoodTruckId: req.body.FoodTruckId,
