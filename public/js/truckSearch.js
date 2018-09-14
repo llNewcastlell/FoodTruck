@@ -43,17 +43,24 @@ $(document).ready(function () {
         .bindPopup(
           "<b>" +
 
-            foodTruckdata[i].name +
-            "</b><br><a href='" +
+          foodTruckdata[i].name +
+          "</b><br><button type='button' class='btn btn-primary foodTruckInfo' data-toggle='modal' data-target='#truckModal'>Info</button>"
+        )
+        .openPopup(); {
+        /* <br><a href='" +
+
             foodTruckdata[i].menuLink +
             "'>Menu</a><br>" +
             foodTruckdata[i].price +
-            "</p>"
-        )
-        .openPopup();
-
+            "</p>" */
+      }
       var popup = L.popup();
     }
+    $("#foodTruckInfo").on("click", function() {
+      $(".truckTitle").html(this.name);
+      $(".description").html(this.description);
+      $(".reviews").html("Reviews");
+    });
 
 
     function onMapClick(e) {
@@ -67,7 +74,9 @@ $(document).ready(function () {
 
     L.tileLayer(
       "https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
-        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+
+        attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
+
         maxZoom: 18,
         minZoom: 13,
         id: "mapbox.emerald",
