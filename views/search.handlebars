@@ -6,7 +6,6 @@
     <div class="col-sm-2" id="nav">
       {{!-- Side Navbar --}} {{>navbar}}
     </div>
-
     {{!-- Box to hold image of food truck and search-by-food dropdown menu (and add style)--}}
     <div class="col-sm-10" id="searchDivBackground">
       <!-- <div id="searchDiv"> -->
@@ -20,19 +19,19 @@
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <div class="list-group">
-           {{!-- <button type="button" id="american" class="list-group-item list-group-item-action">American</button>
-            --}}
+            <button type="button" id="american" class="list-group-item list-group-item-action">American</button>
+           
             <button type="button" id="bbq" class="list-group-item list-group-item-action foodTypeBtn">BBQ</button>
-            {{!-- <button type="button" id="breakfast" class="list-group-item list-group-item-action">Breakfast</button>
+            <button type="button" id="breakfast" class="list-group-item list-group-item-action">Breakfast</button>
             <button type="button" id="burgers" class="list-group-item list-group-item-action">Burgers</button>
             <button type="button" id="caribbean" class="list-group-item list-group-item-action">Caribbean</button>
             <button type="button" id="coffeeAndBeverages" class="list-group-item list-group-item-action">Coffee and
               Beverages</button>
             <button type="button" id="comfortFood" class="list-group-item list-group-item-action">Comfort Food</button>
-            --}}
+           
             <button type="button" id="desserts" class="list-group-item list-group-item-action foodTypeBtn">Sweets and
               Treats</button>
-            {{!-- <button type="button" id="filipino" class="list-group-item list-group-item-action">Filipino</button>
+            <button type="button" id="filipino" class="list-group-item list-group-item-action">Filipino</button>
             <button type="button" id="glutenFree" class="list-group-item list-group-item-action">Gluten Free</button>
             <button type="button" id="hotDogs" class="list-group-item list-group-item-action">Hot Dogs</button>
             <button type="button" id="iceCream" class="list-group-item list-group-item-action">Ice Cream</button>
@@ -41,9 +40,9 @@
             <button type="button" id="mediterranean" class="list-group-item list-group-item-action">Mediterranean</button>
             <button type="button" id="mexican" class="list-group-item list-group-item-action">Mexican</button>
             <button type="button" id="middleEastern" class="list-group-item list-group-item-action">Middle Eastern</button>
-            --}}
+           
             <button type="button" id="pizza" class="list-group-item list-group-item-action foodTypeBtn">Pizza</button>
-            {{!-- <button type="button" id="polis" class="list-group-item list-group-item-action">Polis,
+            <button type="button" id="polis" class="list-group-item list-group-item-action">Polis,
               Czech/Slovakian,
               Ukrainian</button>
             <button type="button" id="puertoRicanFood" class="list-group-item list-group-item-action">Puerto Rican</button>
@@ -51,7 +50,7 @@
             <button type="button" id="seafood" class="list-group-item list-group-item-action">Seafood</button>
             <button type="button" id="sweetsAndTreats" class="list-group-item list-group-item-action">Sweets and Treats</button>
             <button type="button" id="venezuelan" class="list-group-item list-group-item-action">Venezuelan</button>
-            --}}
+           
 
 
           </div>
@@ -63,31 +62,33 @@
 
   </div>
 
-<div class="row">
-  <div class="container" id="map">
-    <div class="col-sm-12">
-      <div id="mapid">
+  <div class="row">
+    <div class="container" id="map">
+      <div class="col-sm-12">
+        <div id="mapid">
+        </div>
       </div>
     </div>
   </div>
-</div>
   {{!-- Div where the food trucks will be displayed after the server returns the results based on the user's request.
   --}}
   <div class="row">
-     {{> trucks}}
+    {{> trucks}}
   </div>
 </div>
-   
 
 
-{{!-- <script src="/js/map.js"></script> --}}
+
+{{!--
+<script src="/js/map.js"></script> --}}
 
 
 {{!-- leaflet stylysheet --}}
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
   crossorigin="" />
 
-{{!-- <script>
+{{!--
+<script>
 
 
   var pinDrop = function (data) {
@@ -96,7 +97,7 @@
     var baseCoords = [39.7452, 104.9922];
     var mymap = L.map('mapid').setView([51.505, -0.09], 13);
     var marker = L.marker([39.678259, -104.964123], {
-      draggable: true,truckCustomMaker
+      draggable: true, truckCustomMaker
     },
       {
         /*truckCustomMaker*/
@@ -154,9 +155,9 @@
     var selected = $(this).attr("id");
     console.log(selected);
     $.get("/api/foodTruck/" + selected).then(function (data) {
-      for(i = 0; i > selected.length; i ++){
+      for (i = 0; i > selected.length; i++) {
         selected += data[i]
-         }
+      }
       console.log("In call back *****======= ", data);
       document.getElementById("mapid").innerHTML.text;
       pinDrop(data);
