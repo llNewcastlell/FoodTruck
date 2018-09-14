@@ -17,11 +17,11 @@ module.exports = function(sequelize, Sequelize) {
   Review.associate = function(models) {
     // We're saying that a Review should belong to an Author
     // A Review can't be created without an Author due to the foreign key constraint
-    Review.belongsTo(models.User, {
-      foreignKey: {
-        allowNull: false
-      }
-    });
+    // Review.belongsTo(models.User, {
+    //   foreignKey: {
+    //     allowNull: false
+    //   }
+    // });
     Review.belongsTo(models.FoodTruck, {
       foreignKey: {
         allowNull: false
