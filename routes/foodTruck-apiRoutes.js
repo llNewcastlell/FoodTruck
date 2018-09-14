@@ -14,7 +14,7 @@ module.exports = function(app) {
       where: {
         foodType: req.params.foodType
       }
-    }).then(function (FoodTruck) {
+    }).then(function(FoodTruck) {
       res.json(FoodTruck);
       console.log(FoodTruck);
     });

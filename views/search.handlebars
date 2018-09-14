@@ -6,7 +6,6 @@
     <div class="col-sm-2" id="nav">
       {{!-- Side Navbar --}} {{>navbar}}
     </div>
-
     {{!-- Box to hold image of food truck and search-by-food dropdown menu (and add style)--}}
     <div class="col-sm-10" id="searchDivBackground">
       <!-- <div id="searchDiv"> -->
@@ -20,7 +19,11 @@
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <div class="list-group">
+
+
            <button type="button" id="american" class="list-group-item list-group-item-action">American</button>
+
+
            
             <button type="button" id="bbq" class="list-group-item list-group-item-action foodTypeBtn">BBQ</button>
             <button type="button" id="breakfast" class="list-group-item list-group-item-action">Breakfast</button>
@@ -63,143 +66,28 @@
 
   </div>
 
-<div class="row">
-  <div class="container" id="map">
-    <div class="col-sm-12">
-      <div id="mapid">
+  <div class="row">
+    <div class="container" id="map">
+      <div class="col-sm-12">
+        <div id="mapid">
+        </div>
       </div>
     </div>
   </div>
-</div>
   {{!-- Div where the food trucks will be displayed after the server returns the results based on the user's request.
   --}}
   <div class="row">
-     {{> trucks}}
+
+     {{> modal}}
+
   </div>
 </div>
-   
 
-
-{{!-- <script src="/js/map.js"></script> --}}
 
 
 {{!-- leaflet stylysheet --}}
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
   crossorigin="" />
 
-{{!-- <script>
 
 
-  var pinDrop = function (data) {
-    console.log("=======: ", data);
-
-    var baseCoords = [39.7452, 104.9922];
-    var mymap = L.map('mapid').setView([51.505, -0.09], 13);
-    var marker = L.marker([39.678259, -104.964123], {
-      draggable: true,truckCustomMaker
-    },
-      {
-        /*truckCustomMaker*/
-      }).addTo(mymap);
-    marker.bindPopup("<b>MMMmmmm</b><br>Tasty Food Truck.").openPopup();
-
-
-    var popup = L.popup();
-
-
-    /*
-    If you click on the map, it will provide you with the long.
-    */
-    function onMapClick(e) {
-      popup
-        .setLatLng(e.latlng)
-        .setContent("You clicked the map at " + e.latlng.toString())
-        .openOn(mymap);
-    }
-
-    mymap.on('click', onMapClick);
-
-
-    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-      maxZoom: 18,
-      minZoom: 13,
-      id: 'mapbox.emerald',
-      accessToken: 'pk.eyJ1IjoibmNvb3BlcnciLCJhIjoiY2pscHYybHlqMjkybDNrb3NuODQ3enhkdyJ9.PYpALCFWSGmaKkhN35TpwA'
-    }).addTo(mymap);
-
-    var myLoc = mymap.locate({
-      setView: true,
-      maxZoom: 16,
-      enableHighAccuracy: true
-
-    });
-
-
-    var truckCustomMaker = L.icon({
-      iconUrl: "./public/images/marker.png",
-      iconSize: [34, 44],
-      iconAnchor: [20, 36],
-      popupAnchor: [-4, -36],
-      shadowUrl: "",
-      shadowSize: [68, 95],
-      shadowAnchor: [22, 94]
-    });
-
-  }
-  pinDrop();
-
-
-  $(document).on("click", ".Foodtype", function () {
-    var selected = $(this).attr("id");
-    console.log(selected);
-    $.get("/api/foodTruck/" + selected).then(function (data) {
-      for(i = 0; i > selected.length; i ++){
-        selected += data[i]
-         }
-      console.log("In call back *****======= ", data);
-      document.getElementById("mapid").innerHTML.text;
-      pinDrop(data);
-    })
-  })
-
-
-
-
-  mymap.on('click', onMapClick);
-
-
-  L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    maxZoom: 18,
-    minZoom: 13,
-    id: 'mapbox.emerald',
-    accessToken: 'pk.eyJ1IjoibmNvb3BlcnciLCJhIjoiY2pscHYybHlqMjkybDNrb3NuODQ3enhkdyJ9.PYpALCFWSGmaKkhN35TpwA'
-  }).addTo(mymap);
-
-  var myLoc = mymap.locate({
-    setView: true,
-    maxZoom: 16,
-    enableHighAccuracy: true
-
-  });
-
-</script> --}}
-
-
-{{!-- <style>
-  #mapid {
-    height: 500px;
-    width: 1100px;
-  }
-</style> --}}
-
-{{!-- Original Example --}} {{!--
-<div class="container">
-  <div class="jumbotron mt-4">
-    <h1 class="display-4 text-center">404 Not Found
-      <span role="img" aria-label="Face with rolling eyes">🙄</span>
-    </h1>
-    <a href="/">← Back To Home</a>
-  </div>
-</div> --}}

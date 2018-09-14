@@ -1,87 +1,68 @@
 //Once the document is ready run the stuff
-$(document).ready(function() {
+$(document).ready(function () {
   //global variables to use in all functions
-  var searchRows = [];
   var lat;
   var long;
-  var truckName = "";
-  var price;
-  var menu;
+
   //
   //on click function for foodtype dropdown
-  $(".foodTypeBtn").on("click", function() {
+  $(".foodTypeBtn").on("click", function () {
     console.log("What was clicked " + this.id);
     var search = this.id;
     console.log("search function for " + search);
     return $.ajax({
       url: "/api/foodTruck/" + search,
       type: "GET"
-    }).then(function(foodTruckdata) {
+    }).then(function (foodTruckdata) {
       //console.log("did I get it?");
-      var results = JSON.stringify(foodTruckdata);
-      console.log(results);
 
-      //with results loop through
-      for (var i = 0; i < foodTruckdata.length; i++) {
-        searchRows.push(createFtRow(foodTruckdata[i]));
-        //searchRows.push(foodTruckdata[i]);
-        truckName = foodTruckdata[i].name;
-        lat = foodTruckdata[i].latitude;
-        long = foodTruckdata[i].longitude;
-        menu = "<a href='" + foodTruckdata[i].menu + "/>";
-        price = foodTruckdata[i].price;
+      console.warn(foodTruckdata);
+      pinDrop(foodTruckdata);
 
-        pinDrop(foodTruckdata[i]);
-      }
-      //createFtRow();
-      console.log("var searchRows " + JSON.stringify(searchRows));
-      // var info = JSON.stringify(searchRows);
-
-      //console.log(foodTruckdata);
-      console.log("inside truck search");
     });
   });
 
-  //Function to print foodtrucks in a row
-  function createFtRow(foodTruckData) {
-    //for (i = 0; i < searchRows.length; i++) {
-    var newTr = $("<tr>");
-    //newTr.data("name", foodTruckData);
-    newTr.append("<td>" + foodTruckData.name + "</td>");
-    //newTr.append("<td>" + foodTruckData.foodType + "</td>");
-    //newTr.append("<td>" + foodTruckData.description + "</td>");
-    //newTr.append("<td><a href='" + foodTruckData.menuLink + "'>Menu</a></td>");
-    newTr.append("<td>" + foodTruckData.price + "</td>");
-    //newTr.append("<td>" + foodTruckData.phone + "</td>");
-    console.log(newTr);
-    $(".truckrows").html(newTr);
-    return newTr;
-  }
+  //Function to create pins
 
-  var pinDrop = function(foodTruckdata) {
+  var pinDrop = function (foodTruckdata) {
     console.log("=======: ", foodTruckdata);
-
     var baseCoords = [39.7452, 104.9922];
     var mymap = L.map("mapid").setView(baseCoords, 13);
-    var marker = L.marker([lat, long], {
-      draggable: true
-    }).addTo(mymap);
-    marker
-      .bindPopup(
-        "<b>" +
-          foodTruckdata.name +
-          "</b><p>" +
-          foodTruckdata.menu +
-          foodTruckdata.price +
-          "</p>"
-      )
-      .openPopup();
 
-    var popup = L.popup();
+    //loop for
+    for (var i = 0; i < foodTruckdata.length; i++) {
+      lat = foodTruckdata[i].latitude;
+      long = foodTruckdata[i].longitude;
+      console.log(lat);
+      console.log(long);
 
-    /*
-    If you click on the map, it will provide you with the long.
-    */
+      var marker = L.marker([lat, long], {
+        draggable: true
+      }).addTo(mymap);
+      marker
+        .bindPopup(
+          "<b>" +
+
+          foodTruckdata[i].name +
+          "</b><br><button type='button' class='btn btn-primary foodTruckInfo' data-toggle='modal' data-target='#truckModal'>Info</button>"
+        )
+        .openPopup(); {
+        /* <br><a href='" +
+
+            foodTruckdata[i].menuLink +
+            "'>Menu</a><br>" +
+            foodTruckdata[i].price +
+            "</p>" */
+      }
+      var popup = L.popup();
+    }
+    $("#foodTruckInfo").on("click", function() {
+      $(".truckTitle").html(this.name);
+      $(".description").html(this.description);
+      $(".reviews").html("Reviews");
+    });
+
+
     function onMapClick(e) {
       popup
         .setLatLng(e.latlng)
@@ -92,15 +73,14 @@ $(document).ready(function() {
     mymap.on("click", onMapClick);
 
     L.tileLayer(
-      "https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}",
-      {
-        attribution:
-          "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
+      "https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
+
+        attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
+
         maxZoom: 18,
         minZoom: 13,
         id: "mapbox.emerald",
-        accessToken:
-          "pk.eyJ1IjoibmNvb3BlcnciLCJhIjoiY2pscHYybHlqMjkybDNrb3NuODQ3enhkdyJ9.PYpALCFWSGmaKkhN35TpwA"
+        accessToken: "pk.eyJ1IjoibmNvb3BlcnciLCJhIjoiY2pscHYybHlqMjkybDNrb3NuODQ3enhkdyJ9.PYpALCFWSGmaKkhN35TpwA"
       }
     ).addTo(mymap);
 
@@ -110,7 +90,7 @@ $(document).ready(function() {
       enableHighAccuracy: true
     });
 
-    var truckCustomMaker = L.icon({
+    var truckCustomMarker = L.icon({
       iconUrl: "./public/images/marker.png",
       iconSize: [34, 44],
       iconAnchor: [20, 36],
