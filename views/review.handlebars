@@ -11,70 +11,49 @@
         <div class="col-sm-10" id="topRated">
             <p id="forage">Forage</p>
 
-            <div class="container">
-                <div class="row">
+            <div class="container" id="container">
+                {{!-- <div class="row"> --}}
                     <div class="col-sm-10" id="reviewDiv">
 
                         <form id="reviewForm">
-                            {{!-- -------- --}}
-                            {{!-- <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                <label class="form-check-label" for="inlineCheckbox1">1</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                                <label class="form-check-label" for="inlineCheckbox2">2</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3"
-                                    disabled>
-                                <label class="form-check-label" for="inlineCheckbox3">3 (disabled)</label>
-                            </div>
-
-                            --}}
                             <div class="form-group row">
-                                <label for="inputEmail3" class="col-sm-2 col-form-label">Title</label>
+                                <label for="inputEmail3" class="col-sm-2 label col-form-label">Title</label>
                                 <div class="col-sm-10">
                                     <input type="input" class="form-control" id="title" placeholder="Title your review">
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label for="inputEmail3" class="col-sm-2 col-form-label">Leave a Review</label>
+                                <label for="inputEmail3" class="col-sm-2 label col-form-label">Leave a Review</label>
                                 <div class="col-sm-10">
                                     <input type="input" class="form-control" id="body" placeholder="Tell us what you think">
                                 </div>
                             </div>
 
-                            {{!-- <div class="form-group">
-                                <label for="example-description">Leave a Review</label>
-                                <textarea class="form-control" id="example-description body" aria-describedby="example-description"
-                                    placeholder="Tell us what you think"></textarea>
-                            </div> --}}
 
                             <div class="form-group row">
-                                <label for="inputEmail3" class="col-sm-2 col-form-label">User Name</label>
+                                <label for="inputEmail3" class="col-sm-2 label col-form-label">User Id</label>
                                 <div class="col-sm-10">
-                                    <input type="input" class="form-control" id="name" placeholder="Tell us what you think">
+                                    <input type="input" class="form-control" id="name" placeholder="Enter your User ID">
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label for="inputEmail3" class="col-sm-2 col-form-label">Food Truck</label>
+                                <label for="inputEmail3" class="col-sm-2 label col-form-label">Food Truck ID</label>
                                 <div class="col-sm-10">
-                                    <input type="input" class="form-control" id="foodTruck" placeholder="Name of Food Truck">
+                                    <input type="input" class="form-control" id="foodTruck" placeholder="Enter Food Truck ID">
                                 </div>
                             </div>
 
                             <div class="form-group row">
                                 <div class="col-sm-10">
-                                    <button type="submit" class="btn btn-primary">Post Review</button>
+                                    <button type="submit" class="btn btn-outline-light">Post Review</button>
                                 </div>
                             </div>
                         </form>
 
                     </div>
-                </div>
+                {{!-- </div> --}}
             </div>
         </div>
     </div>
