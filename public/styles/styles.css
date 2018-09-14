@@ -2,8 +2,13 @@
   background-color: white;
   text-align: center;
   padding-top: 10px;
-  padding-bottom: 20px;
-  font-family: 'Jacques Francois Shadow', cursive;
+  padding-bottom: 0px;
+  /* font-family: 'Bungee Hairline', cursive; */
+  font-family: 'Cabin Sketch', cursive;
+  /* font-family: 'Jacques Francois Shadow', cursive; */
+  /* font-family: 'Bungee Shade', cursive; */
+  /* font-family: 'Codystar', cursive; */
+  /* font-family: 'Rubik Mono One', sans-serif; */
   border: 8px;
   /* border-style: solid;
   border-color: black; */
