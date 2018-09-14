@@ -20,22 +20,24 @@
   color: black;
 }
 
-.dropdown-menu {
-  max-height: 300px;
-  overflow: hidden;
-  overflow-y: auto;
 
-}
+.dropdown-menu{
+    position: absolute;
+    height: auto;
+    max-height: 300px;
+    overflow-x: hidden;
+ 
+ } 
 
-#dropdownMenuButton {
-  background-color: black;
-  color: white;
-  font-family: 'Cutive Mono', monospace;
-  z-index: 1;
-  position: absolute;
-  bottom: 1000;
-  right: 1000;
-  max-height: 200px;
+#dropdownMenuButton{
+ background-color: black;
+ color: white;
+ font-family: 'Cutive Mono', monospace;
+ z-index: 1;
+ position: absolute;
+ bottom: 1000;
+ right:1000;
+
 }
 
 #searchDivBackground {
