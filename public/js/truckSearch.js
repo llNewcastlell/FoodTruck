@@ -15,8 +15,10 @@ $(document).ready(function () {
       type: "GET"
     }).then(function (foodTruckdata) {
       //console.log("did I get it?");
+
       console.warn(foodTruckdata);
       pinDrop(foodTruckdata);
+
     });
   });
 
@@ -24,26 +26,29 @@ $(document).ready(function () {
 
   var pinDrop = function (foodTruckdata) {
     console.log("=======: ", foodTruckdata);
-
     var baseCoords = [39.7452, 104.9922];
     var mymap = L.map("mapid").setView(baseCoords, 13);
+
     //loop for
     for (var i = 0; i < foodTruckdata.length; i++) {
       lat = foodTruckdata[i].latitude;
       long = foodTruckdata[i].longitude;
       console.log(lat);
       console.log(long);
+
       var marker = L.marker([lat, long], {
         draggable: true
       }).addTo(mymap);
       marker
         .bindPopup(
           "<b>" +
+
           foodTruckdata[i].name +
           "</b><br><button type='button' class='btn btn-primary foodTruckInfo' data-toggle='modal' data-target='#truckModal'>Info</button>"
         )
         .openPopup(); {
         /* <br><a href='" +
+
             foodTruckdata[i].menuLink +
             "'>Menu</a><br>" +
             foodTruckdata[i].price +
@@ -57,6 +62,7 @@ $(document).ready(function () {
       $(".reviews").html("Reviews");
     });
 
+
     function onMapClick(e) {
       popup
         .setLatLng(e.latlng)
@@ -68,7 +74,9 @@ $(document).ready(function () {
 
     L.tileLayer(
       "https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
+
         attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
+
         maxZoom: 18,
         minZoom: 13,
         id: "mapbox.emerald",

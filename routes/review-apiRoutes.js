@@ -10,8 +10,8 @@ module.exports = function(app) {
   // GET route for getting all of the reviews
   app.get("/api/reviews", function(req, res) {
     var query = {};
-    if (req.query.user_id) {
-      query.UserId = req.query.user_id;
+    if (req.query.username) {
+      query.Username = req.query.username;
     } else if (req.query.foodTruck_id) {
       query.FoodTruckId = req.query.foodTruck_id;
     }
@@ -71,7 +71,7 @@ module.exports = function(app) {
       where: {
         title: req.body.title,
         body: req.body.body,
-        UserId: req.body.UserId,
+        Username: req.body.Username,
         FoodTruckId: req.body.FoodTruckId,
       }
     }).then(function(dbReview) {
