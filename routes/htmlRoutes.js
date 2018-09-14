@@ -10,7 +10,7 @@ module.exports = function(app) {
     //     foodTrucks: dbfoodTrucks
     //   });
     // });
-    res.render("search");
+    res.render("index");
   });
 
   // Load foodTruck page and pass in an foodTruck by id

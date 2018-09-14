@@ -15,8 +15,10 @@ $(document).ready(function() {
       type: "GET"
     }).then(function(foodTruckdata) {
       //console.log("did I get it?");
+
       console.warn(foodTruckdata);
       pinDrop(foodTruckdata);
+
     });
   });
 
@@ -24,15 +26,16 @@ $(document).ready(function() {
 
   var pinDrop = function(foodTruckdata) {
     console.log("=======: ", foodTruckdata);
-
     var baseCoords = [39.7452, 104.9922];
     var mymap = L.map("mapid").setView(baseCoords, 13);
+
     //loop for
     for (var i = 0; i < foodTruckdata.length; i++) {
       lat = foodTruckdata[i].latitude;
       long = foodTruckdata[i].longitude;
       console.log(lat);
       console.log(long);
+
       var marker = L.marker([lat, long], {
         draggable: true
       }).addTo(mymap);
@@ -40,16 +43,29 @@ $(document).ready(function() {
         .bindPopup(
           "<b>" +
             foodTruckdata[i].name +
-            "</b><br><a href='" +
+            "</b><br><button type='button' class='btn btn-primary' id=' foodTruckInfo' data-toggle='modal' data-target='#truckModal' value=" +
+            foodTruckdata[i] +
+            ">Info</button>"
+        )
+        .openPopup();
+      {
+        /* <br><a href='" +
+
             foodTruckdata[i].menuLink +
             "'>Menu</a><br>" +
             foodTruckdata[i].price +
-            "</p>"
-        )
-        .openPopup();
-
+            "</p>" */
+      }
       var popup = L.popup();
     }
+    $("#foodTruckInfo").on("click", function() {
+      console.log("what is this?" + this.value);
+
+      // $(".modal-title").append(this.name);
+      // $(".modal-body").append(this.description);
+      $(".reviews").html("Reviews");
+    });
+
 
     function onMapClick(e) {
       popup
@@ -61,10 +77,17 @@ $(document).ready(function() {
     mymap.on("click", onMapClick);
 
     L.tileLayer(
+<<<<<<< HEAD
       "https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}",
       {
         attribution:
-          "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
+          'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+=======
+      "https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
+
+        attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
+
+>>>>>>> master
         maxZoom: 18,
         minZoom: 13,
         id: "mapbox.emerald",
