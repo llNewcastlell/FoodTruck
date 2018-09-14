@@ -72,7 +72,30 @@ module.exports = function(sequelize, Sequelize) {
   phone: "123-456-7890",
   latitude: "39.6812",
   longitude: "-104.9678"
-}];
+},
+{
+  name: "Basecamp Provisions",
+  imgLink: "",
+  foodType: "American",
+  description: "Denver-Based Food Truck serving lunch bowls, burritos, and fresh brewed iced tea.",
+  menuLink: "https://www.basecampdenver.com/",
+  price: "$$",
+  phone: "123-456-7890",
+  latitude: "39.6712",
+  longitude: "-104.9778"
+},
+{
+  name: "A Taste of the Philippines",
+  imgLink: "",
+  foodType: "Filipino",
+  description: "A Taste of the Philippines offers the classic Filipino cuisine such as chicken adobo, lumpias, pancit, lechon kawali, turon and more....",
+  menuLink: "http://www.atasteofthephilippines.com",
+  price: "$$",
+  phone: "123-456-7890",
+  latitude: "39.712",
+  longitude: "-104.9878"
+}
+];
   
   FoodTruck.bulkCreate(truckSeed);
 
