@@ -7,14 +7,11 @@
             {{>navbar}}
         </div>
 
-        {{!-- Box to hold image of food truck and search-by-food dropdown menu (and add style)--}}
         <div class="col-sm-10" id="topRated">
-            <p id="forage">Forage</p>
-
             <div class="container" id="container">
                 {{!-- <div class="row"> --}}
                     <div class="col-sm-10" id="reviewDiv">
-
+                        <br>
                         <form id="reviewForm">
                             <div class="form-group row">
                                 <label for="inputEmail3" class="col-sm-2 label col-form-label">Title</label>
@@ -53,7 +50,8 @@
                         </form>
 
                     </div>
-                {{!-- </div> --}}
+
+                    {{!-- </div> --}}
             </div>
         </div>
     </div>
@@ -65,16 +63,15 @@
 
 
 <script>
-
-    $("#reviewForm").on("submit", function(){
-    var newReview = {
-        title: $("#title").val(), 
-        body: $("#body").val(),
-        Username: $("#name").val(), 
-        FoodTruckId: $("#foodTruck").val() 
-    }
-    $.post("/api/reviews", newReview, function(){
-        console.log("review sent")
+    $("#reviewForm").on("submit", function () {
+        var newReview = {
+            title: $("#title").val(),
+            body: $("#body").val(),
+            Username: $("#name").val(),
+            FoodTruckId: $("#foodTruck").val()
+        }
+        $.post("/api/reviews", newReview, function () {
+            console.log("review sent")
+        })
     })
-})
 </script>
