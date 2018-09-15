@@ -4,27 +4,23 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-2" id="nav">
-      {{!-- Side Navbar --}} {{>navbar}}
+      {{!-- Side Navbar --}} 
+      {{>navbar}}
     </div>
     {{!-- Box to hold image of food truck and search-by-food dropdown menu (and add style)--}}
     <div class="col-sm-10" id="searchDivBackground">
-      <!-- <div id="searchDiv"> -->
+    
       {{!-- Dropdown menu for user to select type of cuisine --}}
       <div class="dropdown">
 
         <button class="btn btn btn-lg dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
 
-          Dropdown button
+          Forage for your food
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <div class="list-group">
-
-
            <button type="button" id="american" class="list-group-item list-group-item-action">American</button>
-
-
-           
             <button type="button" id="bbq" class="list-group-item list-group-item-action foodTypeBtn">BBQ</button>
             <button type="button" id="breakfast" class="list-group-item list-group-item-action">Breakfast</button>
             <button type="button" id="burgers" class="list-group-item list-group-item-action">Burgers</button>
@@ -54,16 +50,10 @@
             <button type="button" id="seafood" class="list-group-item list-group-item-action">Seafood</button>
             <button type="button" id="sweetsAndTreats" class="list-group-item list-group-item-action">Sweets and Treats</button>
             <button type="button" id="venezuelan" class="list-group-item list-group-item-action">Venezuelan</button>
-           
-
-
           </div>
         </div>
       </div>
-      <!-- </div> -->
     </div>
-
-
   </div>
 
   <div class="row">

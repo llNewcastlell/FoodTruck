@@ -6,7 +6,7 @@
   /* font-family: 'Bungee Hairline', cursive; */
   font-family: 'Cabin Sketch', cursive;
   /* font-family: 'Jacques Francois Shadow', cursive; */
-  
+  font-size:40px;
   border: 8px;
   /* border-style: solid;
   border-color: black; */
@@ -50,9 +50,6 @@
   background-repeat: no-repeat;
   background-position: center;
   z-index: 0;
-  /* object-fit: fill; */
-  /* background-color: aquamarine; */
-  /* background-attachment: fixed; */
   height: 500px;
   width: 400px;
   text-align: center;
@@ -60,6 +57,11 @@
   border: 50px;
   border-style: solid;
   border-color: rgb(37, 85, 64);
+}
+
+#forage{
+  z-index: 1;
+  position: absolute;
 }
 
 #topRated {
@@ -74,7 +76,12 @@
   border: 50px;
   border-style: solid;
   border-color: rgb(37, 85, 64);
-  padding-bottom: 535px;
+  padding-bottom: 600px;
+  /* position: absolute; */
+
+}
+.card-deck .card{
+  z-index: 3;
 }
 
 #nav {
@@ -86,13 +93,18 @@
   color: white !important;
 }
 
-#forage {
-  color: rgb(33, 65, 51);
-  font-family: 'Bungee Outline', cursive !important;
-  font-size: 160px
+#faves{
+  /* font-family: 'Bungee Outline', cursive !important; */
+  font-family: 'Rubik Mono One', sans-serif;
+  /* font-family: 'Cutive Mono', monospace; */
+  font-size: 45px;
 }
 
-
+#tagline{
+  /* font-family: 'Rubik Mono One', sans-serif; */
+  font-family: 'Nixie One', cursive;
+  font-size:27px
+}
 
 /* Map styling */
 #mapid {
